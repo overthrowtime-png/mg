@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-serif: "Literata", "Noto Serif SC", "Songti SC", STSong, serif;
+  --color-background: oklch(0.96 0.015 96);
+  --color-foreground: oklch(0.28 0.055 153);
+  --color-card: oklch(0.98 0.01 96);
+  --color-card-foreground: oklch(0.28 0.055 153);
+  --color-border: oklch(0.84 0.025 148);
+  --color-ring: oklch(0.68 0.09 78);
+}
+
+:root {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: #1f3b2c;
+  background: #f5f1e7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f5f1e7; }
+button, a, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.font-serif,
+.font-editorial { font-family: "Literata", "Noto Serif SC", "Songti SC", STSong, serif; }
+.font-ui { font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+
+.hero-heading {
+  font-family: "Literata", "Noto Serif SC", "Songti SC", STSong, serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-wrap: balance;
+}
+:lang(zh-CN) .hero-heading,
+:lang(zh) .hero-heading {
+  font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+:lang(zh-CN) .font-serif,
+:lang(zh) .font-serif {
+  font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+  letter-spacing: 0;
+}
+:lang(zh-CN) .font-sans,
+:lang(zh) .font-sans,
+:lang(zh-CN) body,
+:lang(zh) body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+:lang(zh-CN) em,
+:lang(zh) em {
+  font-style: normal;
+}
+:lang(zh-CN) h1,
+:lang(zh-CN) h2,
+:lang(zh-CN) h3,
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3 {
+  letter-spacing: 0;
+}
+
+::selection { background: #c9af77; color: #173527; }
+
+@media (prefers-reduced-motion: no-preference) {
+  button, a { transition-timing-function: var(--ease-out); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Morning Green Shop: bottle-first micro-interaction and restrained detail reveal. */
+.shop-bottle-image,
+.shop-bottle-image > img,
+.shop-hover-cta {
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+.shop-bottle-image {
+  opacity: 1;
+}
+.shop-bottle-image > img {
+  transform: translateY(0) scale(1);
+}
+.shop-hover-cta {
+  opacity: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .shop-card:hover .shop-bottle-image > img,
+  .shop-card:focus-within .shop-bottle-image > img {
+    transform: translateY(-3px) scale(1.015);
+  }
+  .shop-card:hover .shop-hover-cta,
+  .shop-card:focus-within .shop-hover-cta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shop-bottle-image,
+  .shop-bottle-image > img,
+  .shop-hover-cta {
+    transition: none;
+  }
+}
+
+
+/* Morning Green catalogue detail: editorial page motion and hierarchy. */
+.product-detail-header { background: #f5f1e7; }
+.product-detail-hero-image { isolation: isolate; }
+.product-detail-ambient { position: absolute; inset: 18% 18%; z-index: 0; border-radius: 999px; background: #a7c19d; opacity: .1; filter: blur(90px); }
+.product-detail-geometry { position: absolute; z-index: 0; border: 1px solid rgba(173, 142, 80, .2); border-radius: 999px; }
+.product-detail-geometry-one { width: 70%; aspect-ratio: 1; }
+.product-detail-geometry-two { width: 48%; aspect-ratio: 1; opacity: .55; }
+.product-detail-hero-bottle { animation: catalogueBottleIn 460ms var(--ease-out) both; transition: transform 250ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .product-detail-hero-image:hover .product-detail-hero-bottle { transform: translateY(-2px) scale(1.01); }
+}
+.product-detail-reveal { opacity: 0; transform: translateY(6px); animation: catalogueContentIn 360ms var(--ease-out) both; }
+.product-detail-reveal:nth-child(1) { animation-delay: 90ms; }
+.product-detail-reveal:nth-child(2) { animation-delay: 130ms; }
+.product-detail-reveal:nth-child(3) { animation-delay: 170ms; }
+.product-detail-reveal:nth-child(4) { animation-delay: 210ms; }
+.product-detail-reveal:nth-child(5) { animation-delay: 250ms; }
+.product-detail-section-reveal { opacity: .72; transform: translateY(8px); animation: catalogueSectionIn 360ms var(--ease-out) both; }
+.product-detail-section-reveal:nth-child(2) { animation-delay: 120ms; }
+.product-detail-section-reveal:nth-child(3) { animation-delay: 180ms; }
+.product-detail-section-reveal:nth-child(4) { animation-delay: 240ms; }
+@keyframes catalogueBottleIn { from { opacity: 0; transform: translateY(10px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes catalogueContentIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes catalogueSectionIn { from { opacity: .72; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .product-detail-hero-bottle,
+  .product-detail-reveal,
+  .product-detail-section-reveal { animation: none !important; opacity: 1; transform: none; }
+  .product-detail-hero-bottle { transition: none; }
+}
+
+
+/* Morning Green Our Story: editorial chapters with restrained motion. */
+.story-hero-reveal { opacity: 0; transform: translateY(12px); animation: storyHeroIn 760ms var(--ease-out) both; }
+.story-hero-reveal:nth-child(2) { animation-delay: 120ms; }
+.story-hero-reveal:nth-child(3) { animation-delay: 240ms; }
+.story-hero-reveal:nth-child(4) { animation-delay: 360ms; }
+.story-reveal { opacity: 0; transform: translateY(8px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+.story-reveal.story-visible { opacity: 1; transform: translateY(0); }
+.story-dark-chapter { min-height: 56vh; display: flex; align-items: center; }
+.story-image-break { background-attachment: scroll; }
+.story-ingredient-frame { background-attachment: scroll; }
+.story-finale-bottle { transition: transform 500ms var(--ease-out), background-color 500ms ease; }
+.story-finale-bottle:hover { transform: translateY(-5px); background-color: rgba(232,234,217,.16); }
+@keyframes storyHeroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 1024px) {
+  .story-image-break { background-attachment: fixed; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-hero-reveal { animation: none; opacity: 1; transform: none; }
+  .story-reveal { transition: none; opacity: 1; transform: none; }
+  .story-finale-bottle { transition: none; }
+  .story-image-break, .story-ingredient-frame { background-attachment: scroll; }
+}
+
+
+/* Morning Green Our Story: editorial chapters with restrained motion. */
+.story-hero-reveal { opacity: 0; transform: translateY(12px); animation: storyHeroIn 760ms var(--ease-out) both; }
+.story-hero-reveal:nth-child(2) { animation-delay: 120ms; }
+.story-hero-reveal:nth-child(3) { animation-delay: 240ms; }
+.story-hero-reveal:nth-child(4) { animation-delay: 360ms; }
+.story-reveal { opacity: 0; transform: translateY(8px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+.story-reveal.story-visible { opacity: 1; transform: translateY(0); }
+.story-dark-chapter { min-height: 56vh; display: flex; align-items: center; }
+.story-image-break { background-attachment: scroll; }
+.story-ingredient-frame { background-attachment: scroll; }
+.story-finale-bottle { transition: transform 500ms var(--ease-out), background-color 500ms ease; }
+.story-finale-bottle:hover { transform: translateY(-5px); background-color: rgba(232,234,217,.16); }
+@keyframes storyHeroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 1024px) {
+  .story-image-break { background-attachment: fixed; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-hero-reveal { animation: none; opacity: 1; transform: none; }
+  .story-reveal { transition: none; opacity: 1; transform: none; }
+  .story-finale-bottle { transition: none; }
+  .story-image-break, .story-ingredient-frame { background-attachment: scroll; }
+}
