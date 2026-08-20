@@ -9,12 +9,11 @@ import {
 } from "lucide-react";
 import { LOCALE_OPTIONS, translations, type Locale, type Translations } from "../i18n";
 import { Link } from "wouter";
-import { PlatformIcon } from "../components/PlatformIcon";
 import { ContactCtas } from "../components/ContactCtas";
+import { SiteFooter } from "../components/SiteFooter";
 import {
   FACEBOOK_LINK,
   HERO_IMAGE,
-  WHATSAPP_LINK,
 } from "@shared/morningGreen";
 import { ENGLISH_PRODUCT_NAMES, MENU_PRODUCTS, localizedDescriptor } from "../lib/morningGreenCatalog";
 
@@ -289,7 +288,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#173527] text-[#f5f1e7]"><div className="mx-auto max-w-7xl px-5 pb-9 pt-12 sm:px-8 lg:px-12 lg:pb-10 lg:pt-16"><div className="grid gap-12 border-b border-white/12 pb-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20"><div className="max-w-xl"><div className="flex items-center gap-4"><img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" /><div><p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p><p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.24em] text-[#a7c19d]">Freshness, Refined.</p></div></div><p className="mt-10 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">Freshness,<br /><em className="text-[#c9af77]">Refined.</em></p><p className="mt-5 max-w-sm text-[13px] leading-6 text-[#bfccbd]">{copy.brandLine}</p></div><div className="grid gap-10 sm:grid-cols-2 sm:gap-14 lg:pt-2"><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p><ContactCtas copy={copy.contact} className="mt-5" /></div><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p><div className="mt-5 grid gap-3 text-[13px] text-[#bfccbd]"><a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="facebook" size={16} />{copy.footer.facebook}</a><a href="https://www.instagram.com/morninggreen.vn/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="instagram" size={16} />{copy.footer.instagram}</a><a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="whatsapp" size={16} />{copy.footer.whatsapp}</a></div></div></div></div><div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 pt-6 text-[10px] text-[#8d9b89] sm:flex-row sm:items-center"><span>{copy.footer.copyright}</span></div></div></footer>
+      <SiteFooter copy={copy} />
 
     </main>
   );
