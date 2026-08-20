@@ -25,4 +25,8 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
+if (process.env.VERCEL !== "1") {
+  app.listen(Number(process.env.PORT ?? 3000));
+}
+
 export default app;

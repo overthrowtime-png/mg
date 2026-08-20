@@ -8,7 +8,7 @@
       "destination": "/index.html"
     },
     {
-      "source": "/:path((?!api(?:/|$)).*)",
+      "source": "/:path((?!api(?:/|$)|health$).*)",
       "destination": "/index.html"
     }
   ]
