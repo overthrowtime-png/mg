@@ -3,8 +3,6 @@ import {
   ArrowDown,
   ChevronRight,
   Leaf,
-  Phone,
-  Send,
   Sparkles,
   X,
   Zap,
@@ -12,11 +10,11 @@ import {
 import { LOCALE_OPTIONS, translations, type Locale, type Translations } from "../i18n";
 import { Link } from "wouter";
 import { PlatformIcon } from "../components/PlatformIcon";
+import { ContactCtas } from "../components/ContactCtas";
 import {
   FACEBOOK_LINK,
   HERO_IMAGE,
   WHATSAPP_LINK,
-  ZALO_LINK,
 } from "@shared/morningGreen";
 import { ENGLISH_PRODUCT_NAMES, MENU_PRODUCTS, localizedDescriptor } from "../lib/morningGreenCatalog";
 
@@ -67,27 +65,8 @@ function renderHeroHeadline(locale: Locale, title: string, accent: string) {
 }
 
 
-function OrderButtons({ compact = false, copy }: { compact?: boolean; copy: Translations }) {
-  return (
-    <div className={`flex flex-wrap gap-3 ${compact ? "" : "items-center"}`}>
-      <a
-        href={ZALO_LINK}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f5f1e7] px-5 py-3 text-sm font-semibold text-[#1f3b2c] transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#b89b5e] focus:ring-offset-2"
-      >
-        <Send size={16} />
-        {copy.action.orderZalo}
-      </a>
-      <a
-        href="tel:+84839761494"
-        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#f5f1e7]/35 px-5 py-3 text-sm font-semibold text-[#f5f1e7] transition hover:-translate-y-0.5 hover:border-[#c9af77] hover:text-[#c9af77] focus:outline-none focus:ring-2 focus:ring-[#b89b5e] focus:ring-offset-2"
-      >
-        <Phone size={16} />
-        0839 761 494
-      </a>
-    </div>
-  );
+function OrderButtons({ copy }: { copy: Translations }) {
+  return <ContactCtas copy={copy.contact} />;
 }
 
 export default function Home() {
@@ -310,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#173527] text-[#f5f1e7]"><div className="mx-auto max-w-7xl px-5 pb-9 pt-12 sm:px-8 lg:px-12 lg:pb-10 lg:pt-16"><div className="grid gap-12 border-b border-white/12 pb-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20"><div className="max-w-xl"><div className="flex items-center gap-4"><img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" /><div><p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p><p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.24em] text-[#a7c19d]">Freshness, Refined.</p></div></div><p className="mt-10 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">Freshness,<br /><em className="text-[#c9af77]">Refined.</em></p><p className="mt-5 max-w-sm text-[13px] leading-6 text-[#bfccbd]">{copy.brandLine}</p></div><div className="grid gap-10 sm:grid-cols-2 sm:gap-14 lg:pt-2"><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p><div className="mt-5 grid gap-3 text-[13px]"><a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 border-b border-[#c9af77] pb-1 text-[#f5f1e7] transition hover:text-[#c9af77]"><PlatformIcon platform="facebook" size={16} />{copy.footer.orderFacebook}</a><a href={ZALO_LINK} target="_blank" rel="noreferrer" aria-label={copy.footer.zaloAria} className="inline-flex items-center gap-2 text-[#bfccbd] transition hover:text-[#f5f1e7]"><PlatformIcon platform="zalo" size={16} />0839 761 494</a></div></div><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p><div className="mt-5 grid gap-3 text-[13px] text-[#bfccbd]"><a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="facebook" size={16} />{copy.footer.facebook}</a><a href="https://www.instagram.com/morninggreen.vn/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="instagram" size={16} />{copy.footer.instagram}</a><a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="whatsapp" size={16} />{copy.footer.whatsapp}</a></div></div></div></div><div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 pt-6 text-[10px] text-[#8d9b89] sm:flex-row sm:items-center"><span>{copy.footer.copyright}</span></div></div></footer>
+      <footer className="bg-[#173527] text-[#f5f1e7]"><div className="mx-auto max-w-7xl px-5 pb-9 pt-12 sm:px-8 lg:px-12 lg:pb-10 lg:pt-16"><div className="grid gap-12 border-b border-white/12 pb-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20"><div className="max-w-xl"><div className="flex items-center gap-4"><img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" /><div><p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p><p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.24em] text-[#a7c19d]">Freshness, Refined.</p></div></div><p className="mt-10 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">Freshness,<br /><em className="text-[#c9af77]">Refined.</em></p><p className="mt-5 max-w-sm text-[13px] leading-6 text-[#bfccbd]">{copy.brandLine}</p></div><div className="grid gap-10 sm:grid-cols-2 sm:gap-14 lg:pt-2"><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p><ContactCtas copy={copy.contact} className="mt-5" /></div><div><p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p><div className="mt-5 grid gap-3 text-[13px] text-[#bfccbd]"><a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="facebook" size={16} />{copy.footer.facebook}</a><a href="https://www.instagram.com/morninggreen.vn/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="instagram" size={16} />{copy.footer.instagram}</a><a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f5f1e7]"><PlatformIcon platform="whatsapp" size={16} />{copy.footer.whatsapp}</a></div></div></div></div><div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 pt-6 text-[10px] text-[#8d9b89] sm:flex-row sm:items-center"><span>{copy.footer.copyright}</span></div></div></footer>
 
     </main>
   );

@@ -3,6 +3,8 @@ export const FACEBOOK_OFFICE_IMAGE = "/manus-storage/morning-green-facebook-offi
 export const MESSENGER_LINK = "https://m.me/morninggreen";
 export const FACEBOOK_LINK = "https://www.facebook.com/morninggreenvn";
 export const ZALO_LINK = "https://zalo.me/morninggreen";
+export const PHONE_NUMBER = "0839 761 494";
+export const PHONE_LINK = "tel:+84839761494";
 export const WHATSAPP_LINK = "https://wa.me/84839761494";
 
 export type Product = {
