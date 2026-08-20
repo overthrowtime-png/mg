@@ -390,7 +390,7 @@ export function priceForProduct(product: (typeof MENU_PRODUCTS)[number]) {
 export const ENGLISH_PRODUCT_NAMES: Record<string, string> = {
   S01: "Purely Light",
   S02: "Shine & Lean",
-  S03: "Deep Cleanse",
+  S03: "Fresh & Clear",
   S04: "Slim & Chill",
   S05: "Power Fuel",
   S06: "Clean Blend",
@@ -404,7 +404,71 @@ export const ENGLISH_PRODUCT_NAMES: Record<string, string> = {
   J02: "Apple Glow",
   J03: "Golden Fairy",
   J04: "Radiant Red",
-  J05: "Lean Green Detox",
+  J05: "Fresh Green",
   J06: "Celery Refresh",
   J07: "True Celery",
 };
+
+export const CHINESE_PRODUCT_NAMES: Record<string, string> = {
+  S01: "轻盈无负担",
+  S02: "清亮轻盈",
+  S03: "清新蔬果",
+  S04: "轻盈畅享",
+  S05: "饱腹活力",
+  S06: "轻盈好状态",
+  S07: "充沛活力",
+  S08: "绿茶清新",
+  S09: "红润光彩",
+  S10: "金色焕亮",
+  S11: "清润水感",
+  S12: "温和轻盈",
+  J01: "轻盈鲜果",
+  J02: "苹果焕亮",
+  J03: "金色仙子",
+  J04: "红润焕彩",
+  J05: "清新绿意",
+  J06: "芹菜清爽",
+  J07: "纯粹芹菜",
+};
+
+export function localizedProductName(product: (typeof MENU_PRODUCTS)[number], locale: Locale) {
+  if (locale === "en") return ENGLISH_PRODUCT_NAMES[product.code] ?? product.name;
+  if (locale === "zh") return CHINESE_PRODUCT_NAMES[product.code] ?? product.name;
+  return product.name;
+}
+
+const PACKAGE_NAMES: Record<string, { en: string; zh: string }> = {
+  MP01: { en: "1-Day Package", zh: "1 天套餐" },
+  MP02: { en: "1-Day Package", zh: "1 天套餐" },
+  MP03: { en: "3-Day Package", zh: "3 天套餐" },
+  MP04: { en: "5-Day Package", zh: "5 天套餐" },
+  MP05: { en: "7-Day Package", zh: "7 天套餐" },
+  MP06: { en: "14-Day Package", zh: "14 天套餐" },
+  MP07: { en: "5-Day Package", zh: "5 天套餐" },
+  MP08: { en: "7-Day Package", zh: "7 天套餐" },
+  MP09: { en: "5-Day Package", zh: "5 天套餐" },
+  MP10: { en: "7-Day Package", zh: "7 天套餐" },
+};
+
+export function localizedPackageName(packageItem: (typeof MORNING_PACKAGES)[number], locale: Locale) {
+  if (locale === "vi") return packageItem.name;
+  return PACKAGE_NAMES[packageItem.code]?.[locale] ?? packageItem.name;
+}
+
+const PACKAGE_FORMATS: Record<string, { en: string; zh: string }> = {
+  MP01: { en: "1 day × 5 bottles", zh: "1 天 × 5 瓶" },
+  MP02: { en: "1 day × 6 bottles", zh: "1 天 × 6 瓶" },
+  MP03: { en: "5 bottles/day · 15 bottles", zh: "每天 5 瓶 · 共 15 瓶" },
+  MP04: { en: "5 bottles/day · 25 bottles", zh: "每天 5 瓶 · 共 25 瓶" },
+  MP05: { en: "5 bottles/day · 35 bottles", zh: "每天 5 瓶 · 共 35 瓶" },
+  MP06: { en: "5 bottles/day · 70 bottles", zh: "每天 5 瓶 · 共 70 瓶" },
+  MP07: { en: "2 bottles/day · 10 bottles", zh: "每天 2 瓶 · 共 10 瓶" },
+  MP08: { en: "2 bottles/day · 14 bottles", zh: "每天 2 瓶 · 共 14 瓶" },
+  MP09: { en: "3 bottles/day · 15 bottles", zh: "每天 3 瓶 · 共 15 瓶" },
+  MP10: { en: "3 bottles/day · 21 bottles", zh: "每天 3 瓶 · 共 21 瓶" },
+};
+
+export function localizedPackageFormat(packageItem: (typeof MORNING_PACKAGES)[number], locale: Locale) {
+  if (locale === "vi") return packageItem.format;
+  return PACKAGE_FORMATS[packageItem.code]?.[locale] ?? packageItem.format;
+}
