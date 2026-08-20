@@ -136,11 +136,11 @@ export default function Home() {
   }, []);
 
   const activeHero = HERO_SLIDES[activeHeroIndex];
-  const decisionRows = [
-    { number: "01", href: "/shop", title: copy.order.discoveryTitle, detail: copy.order.discoveryDetail, meta: "", external: false },
+  const decisionRows: Array<{ number: string; href: string; title: string; detail: string; meta: string; external: boolean; target?: "menu" }> = [
+    { number: "01", href: "#menu", target: "menu", title: copy.order.discoveryTitle, detail: copy.order.discoveryDetail, meta: "", external: false },
     { number: "02", href: "/shop#morning-packages", title: copy.order.packagesTitle, detail: copy.order.packagesDetail, meta: copy.order.packagesMeta, external: false },
     { number: "03", href: FACEBOOK_LINK, title: copy.order.adviceTitle, detail: copy.order.adviceDetail, meta: "", external: true },
-  ] as const;
+  ];
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f5f1e7] text-[#1f3b2c]">
@@ -302,6 +302,7 @@ export default function Home() {
                   </>
                 );
                 const rowClassName = "group flex min-h-[72px] items-center gap-3 border-b border-[#1f3b2c]/10 px-1 py-3 transition-colors duration-200 last:border-b-0 hover:bg-[#1f3b2c]/[0.035] focus:outline-none focus-visible:bg-[#1f3b2c]/[0.06] focus-visible:ring-2 focus-visible:ring-[#ad8e50] focus-visible:ring-inset";
+                if (row.target) return <button key={row.number} type="button" onClick={() => scrollToId(row.target!)} aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</button>;
                 return row.external ? <a key={row.number} href={row.href} target="_blank" rel="noreferrer" aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</a> : <Link key={row.number} href={row.href} aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</Link>;
               })}
             </div>
