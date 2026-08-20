@@ -13,31 +13,29 @@ type ContactCopy = {
 type ContactCtasProps = {
   copy: ContactCopy;
   className?: string;
-  layout?: "inline" | "stacked";
 };
 
-export function ContactCtas({ copy, className = "", layout = "inline" }: ContactCtasProps) {
-  const isStacked = layout === "stacked";
+export function ContactCtas({ copy, className = "" }: ContactCtasProps) {
   return (
-    <div className={`flex w-full flex-col gap-3 ${isStacked ? "items-stretch" : "sm:flex-row sm:items-center"} ${className}`}>
+    <div className={`flex w-full flex-col gap-3 sm:flex-row sm:items-center ${className}`}>
       <a
         href={FACEBOOK_LINK}
         target="_blank"
         rel="noreferrer"
         aria-label={copy.facebookAria}
-        className={`group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#f5f1e7] px-5 text-[12px] font-semibold tracking-[0.02em] text-[#1f3b2c] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f3b2c] ${isStacked ? "w-full" : ""}`}
+        className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#f5f1e7] px-5 text-[12px] font-semibold tracking-[0.02em] text-[#1f3b2c] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f3b2c]"
       >
         <PlatformIcon platform="facebook" size={16} />
         <span>{copy.facebookLabel}</span>
         <span aria-hidden="true" className="text-[15px] transition-transform duration-200 group-hover:translate-x-0.5">↗</span>
       </a>
-      <div className={`flex min-h-12 items-stretch rounded-full border border-[#f5f1e7]/35 bg-transparent text-[12px] font-semibold text-[#f5f1e7] ${isStacked ? "w-full" : "w-full sm:w-auto"}`}>
+      <div className="flex min-h-12 w-full items-stretch rounded-full border border-[#f5f1e7]/35 bg-transparent text-[12px] font-semibold text-[#f5f1e7] sm:w-auto">
         <a
           href={ZALO_LINK}
           target="_blank"
           rel="noreferrer"
           aria-label={copy.zaloAria}
-          className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-l-full px-4 transition-colors duration-200 hover:bg-[#f5f1e7]/10 hover:text-[#c9af77] focus:outline-none focus-visible:ring-2 focus:ring-[#c9af77] focus-visible:ring-inset sm:flex-none"
+          className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-l-full px-4 transition-colors duration-200 hover:bg-[#f5f1e7]/10 hover:text-[#c9af77] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-inset sm:flex-none"
         >
           <PlatformIcon platform="zalo" size={16} />
           <span>{copy.zaloLabel}</span>
@@ -46,7 +44,7 @@ export function ContactCtas({ copy, className = "", layout = "inline" }: Contact
         <a
           href={PHONE_LINK}
           aria-label={copy.phoneAria}
-          className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-r-full px-4 transition-colors duration-200 hover:bg-[#f5f1e7]/10 hover:text-[#c9af77] focus:outline-none focus-visible:ring-2 focus:ring-[#c9af77] focus-visible:ring-inset sm:flex-none"
+          className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-r-full px-4 transition-colors duration-200 hover:bg-[#f5f1e7]/10 hover:text-[#c9af77] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-inset sm:flex-none"
         >
           <Phone size={15} strokeWidth={1.7} aria-hidden="true" />
           <span className="whitespace-nowrap">{PHONE_NUMBER}</span>
