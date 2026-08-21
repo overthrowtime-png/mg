@@ -19,7 +19,6 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
               <img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" />
               <div>
                 <p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p>
-                <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.24em] text-[#a7c19d]">{copy.footer.made}</p>
               </div>
             </div>
             <p className="mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
