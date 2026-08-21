@@ -13,7 +13,7 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
   return (
     <footer className="bg-[#173527] text-[#f5f1e7]">
       <div className="mx-auto max-w-7xl px-5 pb-8 pt-12 sm:px-8 sm:pt-14 lg:px-12 lg:pb-8 lg:pt-16">
-        <div className="grid gap-10 border-b border-white/12 pb-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.8fr)_minmax(190px,0.7fr)_minmax(160px,0.6fr)] lg:gap-x-16 lg:gap-y-0 lg:pb-12">
+        <div className="grid gap-10 border-b border-white/12 pb-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_minmax(250px,0.9fr)_minmax(170px,0.65fr)] lg:gap-x-12 lg:gap-y-0 lg:pb-12">
           <div className="max-w-xl md:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-4">
               <img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" />
