@@ -30,7 +30,7 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
             <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p>
-            <ContactCtas copy={{ ...copy.contact, facebookLabel: copy.footer.facebookCtaLabel }} className="mt-4" layout="stacked" compact />
+            <ContactCtas copy={copy.contact} className="mt-4" layout="stacked" compact facebookIconLabel facebookLabelOverride={copy.footer.facebookCtaLabel} />
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
