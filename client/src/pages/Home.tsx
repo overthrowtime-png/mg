@@ -266,7 +266,7 @@ export default function Home() {
               <div className="font-serif text-2xl font-medium text-[#1f3b2c] sm:text-3xl">{copy.order.cardTitle}</div>
               <div className="mt-1 text-[13px] text-[#697363]">{copy.order.cardHelper}</div>
             </div>
-            <div>
+            <div className="grid gap-2">
               {decisionRows.map((row) => {
                 const rowContent = (
                   <>
@@ -279,7 +279,7 @@ export default function Home() {
                     <ChevronRight size={17} strokeWidth={1.7} className="shrink-0 text-[#ad8e50] transition-transform duration-200 group-hover:translate-x-0.5" />
                   </>
                 );
-                const rowClassName = "group flex min-h-[72px] items-center gap-3 border-b border-[#1f3b2c]/10 px-1 py-3 transition-colors duration-200 last:border-b-0 hover:bg-[#1f3b2c]/[0.035] focus:outline-none focus-visible:bg-[#1f3b2c]/[0.06] focus-visible:ring-2 focus-visible:ring-[#ad8e50] focus-visible:ring-inset";
+                const rowClassName = "group flex min-h-[76px] items-center gap-3 rounded-[12px] border border-[#1f3b2c]/10 bg-transparent px-3 py-3 transition-colors duration-200 hover:border-[#ad8e50]/40 hover:bg-[#1f3b2c]/[0.035] focus:outline-none focus-visible:border-[#ad8e50] focus-visible:bg-[#1f3b2c]/[0.06] focus-visible:ring-2 focus-visible:ring-[#ad8e50] focus-visible:ring-inset";
                 if (row.target) return <button key={row.number} type="button" onClick={() => scrollToId(row.target!)} aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</button>;
                 return row.external ? <a key={row.number} href={row.href} target="_blank" rel="noreferrer" aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</a> : <Link key={row.number} href={row.href} aria-label={`${row.title} — ${row.detail}`} className={rowClassName}>{rowContent}</Link>;
               })}
