@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { Link } from "wouter";
 import { SiteFooter } from "../components/SiteFooter";
+import { BackToTopButton } from "../components/BackToTopButton";
 import { LOCALE_OPTIONS, translations, type Locale } from "../i18n";
 
 type StoryLocale = Locale;
@@ -92,5 +93,6 @@ export default function Story() {
 
 
     <SiteFooter copy={copy} showHomeLink />
+    <BackToTopButton label={copy.ui.backToTop} />
   </main>;
 }

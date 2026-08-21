@@ -11,6 +11,7 @@ import { LOCALE_OPTIONS, translations, type Locale, type Translations } from "..
 import { Link } from "wouter";
 import { ContactCtas } from "../components/ContactCtas";
 import { SiteFooter } from "../components/SiteFooter";
+import { BackToTopButton } from "../components/BackToTopButton";
 import {
   FACEBOOK_LINK,
   HERO_IMAGE,
@@ -289,7 +290,7 @@ export default function Home() {
       </section>
 
       <SiteFooter copy={copy} />
-
+      <BackToTopButton label={copy.ui.backToTop} />
     </main>
   );
 }
