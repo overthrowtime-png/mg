@@ -15,12 +15,13 @@ type ContactCtasProps = {
   className?: string;
   layout?: "inline" | "stacked";
   compact?: boolean;
+  facebookIconOnly?: boolean;
 };
 
-export function ContactCtas({ copy, className = "", layout = "inline", compact = false }: ContactCtasProps) {
+export function ContactCtas({ copy, className = "", layout = "inline", compact = false, facebookIconOnly = false }: ContactCtasProps) {
   const isStacked = layout === "stacked";
   const sizeClass = compact ? "min-h-11 text-[11px]" : "min-h-12 text-[12px]";
-  const facebookPadding = compact ? "px-4" : "px-5";
+  const facebookButtonSizing = facebookIconOnly ? "w-12 px-0" : `${compact ? "px-4" : "px-5"} ${compact ? "w-fit" : "w-full sm:w-fit"}`;
   const capsulePadding = compact ? "px-3" : "px-4";
   return (
     <div className={`flex w-full flex-col ${compact ? "gap-2.5" : "gap-3"} ${isStacked ? "items-start" : "sm:flex-row sm:items-center"} ${className}`}>
@@ -29,11 +30,10 @@ export function ContactCtas({ copy, className = "", layout = "inline", compact =
         target="_blank"
         rel="noreferrer"
         aria-label={copy.facebookAria}
-        className={`group inline-flex ${sizeClass} ${facebookPadding} ${compact ? "w-fit" : "w-full sm:w-fit"} items-center justify-center gap-2 rounded-full bg-[#f5f1e7] font-semibold tracking-[0.02em] text-[#1f3b2c] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]`}
+        className={`group inline-flex ${sizeClass} ${facebookButtonSizing} items-center justify-center gap-2 rounded-full bg-[#f5f1e7] font-semibold tracking-[0.02em] text-[#1f3b2c] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]`}
       >
         <PlatformIcon platform="facebook" size={compact ? 15 : 16} />
-        <span>{copy.facebookLabel}</span>
-        <span aria-hidden="true" className="text-[14px] transition-transform duration-200 group-hover:translate-x-0.5">↗</span>
+        {facebookIconOnly ? <span className="sr-only">{copy.facebookLabel}</span> : <><span>{copy.facebookLabel}</span><span aria-hidden="true" className="text-[14px] transition-transform duration-200 group-hover:translate-x-0.5">↗</span></>}
       </a>
       <div className={`${sizeClass} flex ${compact ? "w-fit" : "w-full sm:w-auto"} items-stretch rounded-full border border-[#f5f1e7]/35 bg-transparent font-semibold text-[#f5f1e7]`}>
         <a

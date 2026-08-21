@@ -65,7 +65,7 @@ function renderHeroHeadline(locale: Locale, title: string, accent: string) {
 
 
 function OrderButtons({ copy }: { copy: Translations }) {
-  return <ContactCtas copy={copy.contact} />;
+  return <ContactCtas copy={copy.contact} facebookIconOnly />;
 }
 
 export default function Home() {
