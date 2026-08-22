@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--mg-font-body);
-  --font-serif: var(--mg-font-display);
-  --font-display: var(--mg-font-display);
-  --font-ui: var(--mg-font-body);
+  --font-sans: var(--mg-font-primary);
+  --font-serif: var(--mg-font-primary);
+  --font-primary: var(--mg-font-primary);
+  --font-display: var(--mg-font-primary);
+  --font-ui: var(--mg-font-primary);
+  --text-display-xl: var(--mg-text-display-xl);
+  --text-display-lg: var(--mg-text-display-lg);
   --text-hero: var(--mg-text-hero);
   --text-h1: var(--mg-text-h1);
   --text-h2: var(--mg-text-h2);
   --text-h3: var(--mg-text-h3);
   --text-body-lg: var(--mg-text-body-lg);
   --text-body: var(--mg-text-body);
-  --text-small: var(--mg-text-small);
+  --text-body-sm: var(--mg-text-body-sm);
+  --text-small: var(--mg-text-body-sm);
+  --text-nav: var(--mg-text-nav);
   --text-label: var(--mg-text-label);
+  --text-caption: var(--mg-text-caption);
   --color-background: oklch(0.96 0.015 96);
   --color-foreground: oklch(0.28 0.055 153);
   --color-card: oklch(0.98 0.01 96);
@@ -22,17 +28,24 @@
 }
 
 :root {
-  --mg-font-display: "Cormorant Garamond", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
-  --mg-font-body: "Manrope", "Noto Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  --mg-text-hero: clamp(2.75rem, 7vw, 5.125rem);
-  --mg-text-h1: clamp(2.5rem, 5vw, 4rem);
-  --mg-text-h2: clamp(2rem, 4vw, 3.25rem);
-  --mg-text-h3: clamp(1.75rem, 2.8vw, 2rem);
+  --mg-font-primary: "DM Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --mg-text-display-xl: clamp(3.625rem, 5.4vw, 5.125rem);
+  --mg-text-display-lg: clamp(3.25rem, 4.6vw, 4.25rem);
+  --mg-text-hero: var(--mg-text-display-xl);
+  --mg-text-hero-mobile: clamp(2.625rem, 11vw, 3.375rem);
+  --mg-text-h1: clamp(3.25rem, 4.5vw, 4rem);
+  --mg-text-h1-mobile: clamp(2.375rem, 10vw, 2.875rem);
+  --mg-text-h2: clamp(2.5rem, 3.6vw, 3.125rem);
+  --mg-text-h2-mobile: clamp(1.875rem, 8vw, 2.25rem);
+  --mg-text-h3: clamp(1.375rem, 2.1vw, 1.75rem);
   --mg-text-body-lg: 1.125rem;
   --mg-text-body: 1rem;
-  --mg-text-small: 0.8125rem;
+  --mg-text-body-sm: 0.875rem;
+  --mg-text-small: var(--mg-text-body-sm);
+  --mg-text-nav: 0.875rem;
   --mg-text-label: 0.6875rem;
-  font-family: var(--mg-font-body);
+  --mg-text-caption: 0.75rem;
+  font-family: var(--mg-font-primary);
   color: #1f3b2c;
   background: #f5f1e7;
   font-synthesis: none;
@@ -44,30 +57,39 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #f5f1e7; }
+body { margin: 0; min-width: 320px; background: #f5f1e7; font-family: var(--mg-font-primary); }
 button, a, input, textarea { font: inherit; }
 button { cursor: pointer; }
+em { font-style: normal; }
 .font-serif,
-.font-editorial { font-family: var(--mg-font-display); }
-.font-ui { font-family: var(--mg-font-body); }
-.type-hero { font-family: var(--mg-font-display); font-size: var(--mg-text-hero); font-weight: 400; line-height: 1.04; letter-spacing: -0.01em; text-wrap: balance; }
-.type-h1 { font-family: var(--mg-font-display); font-size: var(--mg-text-h1); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
-.type-h2 { font-family: var(--mg-font-display); font-size: var(--mg-text-h2); font-weight: 400; line-height: 1.1; letter-spacing: -0.005em; text-wrap: balance; }
-.type-h3 { font-family: var(--mg-font-display); font-size: var(--mg-text-h3); font-weight: 500; line-height: 1.15; }
-.type-body-lg { font-family: var(--mg-font-body); font-size: var(--mg-text-body-lg); line-height: 1.6; }
-.type-body { font-family: var(--mg-font-body); font-size: var(--mg-text-body); line-height: 1.65; }
-.type-small { font-family: var(--mg-font-body); font-size: var(--mg-text-small); line-height: 1.5; }
-.type-label { font-family: var(--mg-font-body); font-size: var(--mg-text-label); font-weight: 600; letter-spacing: 0.1em; }
+.font-editorial,
+.font-display,
+.font-primary,
+.font-sans,
+.font-ui { font-family: var(--mg-font-primary); }
+.type-hero { font-family: var(--mg-font-primary); font-size: var(--mg-text-hero); font-weight: 400; line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance; }
+.type-h1 { font-family: var(--mg-font-primary); font-size: var(--mg-text-h1); font-weight: 400; line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance; }
+.type-h2 { font-family: var(--mg-font-primary); font-size: var(--mg-text-h2); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+.type-h3 { font-family: var(--mg-font-primary); font-size: var(--mg-text-h3); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+.type-body-lg { font-family: var(--mg-font-primary); font-size: var(--mg-text-body-lg); font-weight: 400; line-height: 1.6; letter-spacing: -0.005em; }
+.type-body { font-family: var(--mg-font-primary); font-size: var(--mg-text-body); font-weight: 400; line-height: 1.6; letter-spacing: -0.005em; }
+.type-body-sm { font-family: var(--mg-font-primary); font-size: var(--mg-text-body-sm); font-weight: 400; line-height: 1.5; letter-spacing: -0.005em; }
+.type-small { font-family: var(--mg-font-primary); font-size: var(--mg-text-body-sm); font-weight: 400; line-height: 1.5; }
+.type-nav { font-family: var(--mg-font-primary); font-size: var(--mg-text-nav); font-weight: 500; line-height: 1; letter-spacing: 0.015em; }
+.type-label { font-family: var(--mg-font-primary); font-size: var(--mg-text-label); font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; }
+.type-caption { font-family: var(--mg-font-primary); font-size: var(--mg-text-caption); font-weight: 400; line-height: 1.5; }
 
 .hero-heading {
-  font-family: var(--mg-font-display);
+  font-family: var(--mg-font-primary);
   font-weight: 400;
   font-synthesis: none;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 :lang(zh-CN) .hero-heading,
 :lang(zh) .hero-heading {
-  font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
   letter-spacing: 0;
   line-height: 1.1;
 }
@@ -75,8 +97,12 @@ button { cursor: pointer; }
 :lang(zh-CN) .font-serif,
 :lang(zh) .font-serif,
 :lang(zh-CN) .font-editorial,
-:lang(zh) .font-editorial {
-  font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+:lang(zh) .font-editorial,
+:lang(zh-CN) .font-display,
+:lang(zh) .font-display,
+:lang(zh-CN) .font-primary,
+:lang(zh) .font-primary {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
   letter-spacing: 0;
 }
 :lang(zh-CN) .font-sans,
@@ -87,10 +113,6 @@ button { cursor: pointer; }
 :lang(zh) body {
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
 }
-:lang(zh-CN) em,
-:lang(zh) em {
-  font-style: normal;
-}
 :lang(zh-CN) h1,
 :lang(zh-CN) h2,
 :lang(zh-CN) h3,
@@ -98,6 +120,13 @@ button { cursor: pointer; }
 :lang(zh) h2,
 :lang(zh) h3 {
   letter-spacing: 0;
+}
+
+@media (max-width: 639px) {
+  .type-hero,
+  .hero-heading { font-size: var(--mg-text-hero-mobile); line-height: 1.04; letter-spacing: -0.025em; }
+  .type-h1 { font-size: var(--mg-text-h1-mobile); line-height: 1.08; letter-spacing: -0.025em; }
+  .type-h2 { font-size: var(--mg-text-h2-mobile); line-height: 1.1; letter-spacing: -0.018em; }
 }
 
 ::selection { background: #c9af77; color: #173527; }

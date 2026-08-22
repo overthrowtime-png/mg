@@ -50,16 +50,16 @@ function renderHeroHeadline(locale: Locale, title: string, accent: string) {
   if (locale === "vi") {
     return <>
       <span className="block whitespace-nowrap">Hôm nay,</span>
-      <em className={accentClass}>
+      <span className={accentClass}>
         <span className="block whitespace-nowrap">bạn đã uống</span>
-        <span className="block whitespace-nowrap font-semibold not-italic text-[#fffaf0] drop-shadow-[0_0_18px_rgba(255,250,240,0.24)]">MORNING GREEN</span>
+        <span className="block whitespace-nowrap text-[#fffaf0]">MORNING GREEN</span>
         <span className="block whitespace-nowrap">chưa?</span>
-      </em>
+      </span>
     </>;
   }
   return <>
     <span className="block whitespace-nowrap">{title}</span>
-    <em className={accentClass}>{accent}</em>
+    <span className={accentClass}>{accent}</span>
   </>;
 }
 
@@ -170,7 +170,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-5"><span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a7c19d]">{copy.localeName}</span><LocaleSwitcher locale={locale} onChange={setLocale} label={copy.ui.languageSelector} /></div>
+            <div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-5"><span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#a7c19d]">{copy.localeName}</span><LocaleSwitcher locale={locale} onChange={setLocale} label={copy.ui.languageSelector} /></div>
           </div>
         )}
       </header>
@@ -181,12 +181,12 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 h-48 w-full bg-gradient-to-t from-[#f5f1e7] to-transparent opacity-10" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-16 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16 lg:px-12 lg:pb-28 lg:pt-24">
           <div className="order-2 relative z-10 min-w-0 max-w-[30rem] lg:order-1 lg:max-w-[28rem] lg:pr-10">
-            <div className="mb-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.27em] text-[#c9af77]">{copy.hero.eyebrow}</div>
-            <h1 className="hero-heading max-w-[30rem] text-[clamp(2.75rem,8vw,3.35rem)] font-medium leading-[1.02] tracking-[-0.012em] text-[#f6f0e2] sm:text-[clamp(3.1rem,3.8vw,3.95rem)] sm:leading-[1.02]">{renderHeroHeadline(locale, copy.hero.title, copy.hero.titleAccent)}</h1>
+            <div className="mb-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#c9af77]">{copy.hero.eyebrow}</div>
+            <h1 className="hero-heading type-hero max-w-[30rem] text-[#f6f0e2]">{renderHeroHeadline(locale, copy.hero.title, copy.hero.titleAccent)}</h1>
             <p className="mt-6 max-w-[28rem] text-[15px] leading-7 text-[#d9ddcf] sm:text-base">{copy.hero.body}</p>
             <div className="mt-7 flex flex-wrap gap-4">
-              <button onClick={() => scrollToId("discovery")} className="inline-flex items-center gap-2 rounded-[12px] bg-[#c9af77] px-6 py-3.5 text-[13px] font-semibold text-[#173527] transition hover:-translate-y-0.5 hover:bg-[#dec99a] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#173527]">{copy.discovery.cta} <ArrowDown size={14} /></button>
-              <Link href="/story" className="inline-flex items-center gap-2 rounded-[12px] border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-[#f5f1e7] transition hover:border-[#c9af77] hover:text-[#c9af77]">{copy.hero.why} <ChevronRight size={14} /></Link>
+              <button onClick={() => scrollToId("discovery")} className="inline-flex items-center gap-2 rounded-[12px] bg-[#c9af77] px-6 py-3.5 text-[14px] font-medium text-[#173527] transition hover:-translate-y-0.5 hover:bg-[#dec99a] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#173527]">{copy.discovery.cta} <ArrowDown size={14} /></button>
+              <Link href="/story" className="inline-flex items-center gap-2 rounded-[12px] border border-white/25 px-6 py-3.5 text-[14px] font-medium text-[#f5f1e7] transition hover:border-[#c9af77] hover:text-[#c9af77]">{copy.hero.why} <ChevronRight size={14} /></Link>
             </div>
 
           </div>
@@ -219,11 +219,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 pb-10 lg:flex-row lg:items-end lg:pb-14">
             <div>
-              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#ad8e50]">{copy.menu.featuredEyebrow}</p>
-              <h2 className="max-w-2xl font-serif text-[clamp(2.5rem,5vw,4.6rem)] font-normal leading-[0.98] tracking-[-0.035em] text-[#1f3b2c]">{copy.menu.featuredTitle}</h2>
+              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#ad8e50]">{copy.menu.featuredEyebrow}</p>
+              <h2 className="max-w-2xl type-h2 text-[#1f3b2c]">{copy.menu.featuredTitle}</h2>
               <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#697363]">{copy.menu.featuredSupporting}</p>
             </div>
-            <span className="hidden max-w-[170px] font-serif text-2xl leading-tight text-[#1f3b2c] lg:block">Freshness,<br /><em className="text-[#ad8e50]">Refined.</em></span>
+            <span className="hidden max-w-[170px] font-primary text-2xl leading-tight text-[#1f3b2c] lg:block">Freshness,<br /><span className="text-[#ad8e50]">Refined.</span></span>
           </div>
           <div className="grid gap-x-8 gap-y-12 pt-4 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURED_PRODUCTS.map((product) => (
@@ -231,39 +231,39 @@ export default function Home() {
                 <div className="relative h-[360px] overflow-hidden rounded-[12px] bg-[#e8ead9] sm:h-[410px]">
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#173527]/12 via-transparent to-transparent" />
                   <div className="shop-bottle-image absolute inset-x-0 bottom-0 z-20 flex h-[350px] items-end justify-center sm:h-[400px]" style={{ transform: `scale(${product.scale})`, transformOrigin: "50% 100%" }}><img src={product.image} alt={`Chai ${product.name} Morning Green`} className="h-[340px] w-[250px] object-contain object-bottom drop-shadow-[0_22px_16px_rgba(5,36,25,0.16)] sm:h-[390px] sm:w-[280px]" /></div>
-                  <span className="shop-hover-cta pointer-events-none absolute bottom-4 left-4 z-40 inline-flex translate-y-2 items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c]">{copy.action.viewDetails} <ChevronRight size={13} /></span>
+                  <span className="shop-hover-cta pointer-events-none absolute bottom-4 left-4 z-40 inline-flex translate-y-2 items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-[#1f3b2c]">{copy.action.viewDetails} <ChevronRight size={13} /></span>
                 </div>
-                <div className="pt-4"><h3 className="font-serif text-[20px] font-medium leading-[1.15] tracking-[-0.018em] text-[#1f3b2c]">{product.name}</h3><p className="mt-1 text-[12px] font-medium text-[#526151]">{ENGLISH_PRODUCT_NAMES[product.code]}</p><p className="mt-2 text-[11px] font-medium leading-5 tracking-[0.015em] text-[#ad8e50]">{localizedDescriptor(product.ingredients, locale)}</p></div>
+                <div className="pt-4"><h3 className="type-h3 text-[#1f3b2c]">{product.name}</h3><p className="mt-1 text-[12px] font-medium text-[#526151]">{ENGLISH_PRODUCT_NAMES[product.code]}</p><p className="mt-2 text-[11px] font-medium leading-5 tracking-[0.015em] text-[#ad8e50]">{localizedDescriptor(product.ingredients, locale)}</p></div>
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex justify-center"><Link href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></Link></div>
+          <div className="mt-10 flex justify-center"><Link href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-medium uppercase tracking-[0.08em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></Link></div>
         </div>
       </section>
       <section id="discovery" className="scroll-mt-28 bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1fr_0.8fr]">
-          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c9af77]">{copy.discovery.eyebrow}</p><h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] sm:text-5xl">{copy.discovery.title}<br /><em className="text-[#c9af77]">{copy.discovery.titleAccent}</em></h2><p className="mt-7 max-w-lg text-[15px] leading-7 text-[#d0d8ca] sm:text-base">{copy.discovery.body}</p><div className="mt-8 flex flex-wrap items-center gap-5"><OrderButtons copy={copy} /><span className="text-xs text-[#b8c7b5]">{copy.discovery.note}</span></div></div>
-          <Link href="/shop#morning-packages" aria-label={`${copy.discovery.cta} — ${copy.menu.packagesCollection}`} className="group relative mx-auto block w-full max-w-md"><div className="absolute -inset-5 rounded-[35px] border border-[#c9af77]/20 transition group-hover:border-[#c9af77]/45" /><div className="relative rounded-[28px] bg-[#f5f1e7] p-5 text-[#1f3b2c] shadow-2xl transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_48px_rgba(5,36,25,0.24)]"><div className="flex items-center justify-between border-b border-[#1f3b2c]/10 pb-4"><span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#ad8e50]">{copy.menu.packagesCollection}</span><span className="text-xs text-[#65735f]">{copy.order.packagesMeta}</span></div><div className="grid grid-cols-2 gap-2 py-5"><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-2-bottles.png" alt={locale === "vi" ? "Gói Morning Green 2 chai mỗi ngày" : locale === "en" ? "Morning Green package with two bottles per day" : "每天两瓶的 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-3-bottles.png" alt={locale === "vi" ? "Gói Morning Green 3 chai mỗi ngày" : locale === "en" ? "Morning Green package with three bottles per day" : "每天三瓶的 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-5-bottles.png" alt={locale === "vi" ? "Gói Morning Green 5 chai" : locale === "en" ? "Morning Green package with five bottles" : "五瓶 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-6-bottles.png" alt={locale === "vi" ? "Gói Morning Green 6 chai" : locale === "en" ? "Morning Green package with six bottles" : "六瓶 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div></div><div className="border-t border-[#1f3b2c]/10 pt-4"><div className="font-serif text-2xl font-medium">{copy.menu.packagesCollection}</div><div className="mt-1 text-xs text-[#697363]">{copy.discovery.note}</div></div><div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#1f3b2c]/10 pt-3"><p className="max-w-[18rem] text-[10px] leading-4 text-[#697363]">{copy.menu.packageDisclaimer}</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c]">{copy.discovery.cta}<ChevronRight size={14} strokeWidth={1.7} /></span></div></div></Link>
+          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#c9af77]">{copy.discovery.eyebrow}</p><h2 className="max-w-xl type-h2">{copy.discovery.title}<br /><span className="text-[#c9af77]">{copy.discovery.titleAccent}</span></h2><p className="mt-7 max-w-lg text-[15px] leading-7 text-[#d0d8ca] sm:text-base">{copy.discovery.body}</p><div className="mt-8 flex flex-wrap items-center gap-5"><OrderButtons copy={copy} /><span className="text-xs text-[#b8c7b5]">{copy.discovery.note}</span></div></div>
+          <Link href="/shop#morning-packages" aria-label={`${copy.discovery.cta} — ${copy.menu.packagesCollection}`} className="group relative mx-auto block w-full max-w-md"><div className="absolute -inset-5 rounded-[35px] border border-[#c9af77]/20 transition group-hover:border-[#c9af77]/45" /><div className="relative rounded-[28px] bg-[#f5f1e7] p-5 text-[#1f3b2c] shadow-2xl transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_48px_rgba(5,36,25,0.24)]"><div className="flex items-center justify-between border-b border-[#1f3b2c]/10 pb-4"><span className="text-[11px] font-medium uppercase tracking-[0.08em] text-[#ad8e50]">{copy.menu.packagesCollection}</span><span className="text-xs text-[#65735f]">{copy.order.packagesMeta}</span></div><div className="grid grid-cols-2 gap-2 py-5"><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-2-bottles.png" alt={locale === "vi" ? "Gói Morning Green 2 chai mỗi ngày" : locale === "en" ? "Morning Green package with two bottles per day" : "每天两瓶的 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-3-bottles.png" alt={locale === "vi" ? "Gói Morning Green 3 chai mỗi ngày" : locale === "en" ? "Morning Green package with three bottles per day" : "每天三瓶的 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-5-bottles.png" alt={locale === "vi" ? "Gói Morning Green 5 chai" : locale === "en" ? "Morning Green package with five bottles" : "五瓶 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div><div className="overflow-hidden rounded-[14px] bg-white"><img src="/morning-package-6-bottles.png" alt={locale === "vi" ? "Gói Morning Green 6 chai" : locale === "en" ? "Morning Green package with six bottles" : "六瓶 Morning Green 套餐"} className="aspect-[3/2] h-full w-full object-contain" loading="lazy" /></div></div><div className="border-t border-[#1f3b2c]/10 pt-4"><div className="type-h3">{copy.menu.packagesCollection}</div><div className="mt-1 text-xs text-[#697363]">{copy.discovery.note}</div></div><div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#1f3b2c]/10 pt-3"><p className="max-w-[18rem] text-[10px] leading-4 text-[#697363]">{copy.menu.packageDisclaimer}</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-medium uppercase tracking-[0.08em] text-[#1f3b2c]">{copy.discovery.cta}<ChevronRight size={14} strokeWidth={1.7} /></span></div></div></Link>
         </div>
       </section>
 
       <section id="story" className="relative scroll-mt-28 overflow-hidden bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.story.eyebrow}</p><h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] sm:text-5xl">{copy.story.title}<br /><em className="text-[#c9af77]">{copy.story.titleAccent}</em></h2></div>
+          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#c9af77]">{copy.story.eyebrow}</p><h2 className="max-w-xl type-h2">{copy.story.title}<br /><span className="text-[#c9af77]">{copy.story.titleAccent}</span></h2></div>
           <div className="max-w-lg"><p className="text-[15px] leading-8 text-[#cbd4c4]">{copy.story.body}</p><Link href="/story" className="mt-8 inline-flex items-center gap-2 border-b border-[#c9af77] pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f5f1e7] transition hover:text-[#c9af77]">{copy.ui.readStory} <ChevronRight size={14} /></Link></div>
         </div>
       </section>
       <section id="order" className="scroll-mt-28 bg-white px-5 py-24 sm:px-8 lg:px-12 lg:py-28">
         <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="max-w-[32rem] pt-1 lg:pt-3">
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#1f3b2c]/65">{copy.order.eyebrow}</p>
-            <h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] text-[#173527] sm:text-5xl">{copy.order.title}</h2>
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#1f3b2c]/65">{copy.order.eyebrow}</p>
+            <h2 className="max-w-xl type-h2 text-[#173527]">{copy.order.title}</h2>
             <p className="mt-7 max-w-lg text-[15px] leading-8 text-[#354a38]">{copy.order.body}</p>
-            <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1f3b2c]/60">{copy.order.meta}</p>
+            <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1f3b2c]/60">{copy.order.meta}</p>
           </div>
           <div className="rounded-[22px] bg-[#f5f1e7] p-5 shadow-[0_10px_26px_rgba(31,59,44,0.08)] sm:p-6">
             <div className="mb-1 border-b border-[#1f3b2c]/10 pb-4">
-              <div className="font-serif text-2xl font-medium text-[#1f3b2c] sm:text-3xl">{copy.order.cardTitle}</div>
+              <div className="type-h3 text-[#1f3b2c] sm:text-3xl">{copy.order.cardTitle}</div>
               <div className="mt-1 text-[13px] text-[#697363]">{copy.order.cardHelper}</div>
             </div>
             <div className="grid gap-2">

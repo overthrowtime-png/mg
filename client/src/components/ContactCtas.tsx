@@ -36,12 +36,12 @@ export function ContactCtas({ copy, className = "", layout = "inline", compact =
         target="_blank"
         rel="noreferrer"
         aria-label={copy.facebookAria}
-        className={`group inline-flex ${facebookSizeClass} ${facebookButtonSizing} items-center justify-center gap-2 rounded-full ${facebookButtonStyle} font-semibold tracking-[0.02em] transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]`}
+        className={`group inline-flex ${facebookSizeClass} ${facebookButtonSizing} items-center justify-center gap-2 rounded-full ${facebookButtonStyle} font-medium tracking-[0.01em] transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]`}
       >
         <PlatformIcon platform="facebook" size={compact ? 15 : 16} />
         {facebookIconOnly ? <span className="sr-only">{facebookLabel}</span> : <><span className={`${ctaLabelClass} whitespace-nowrap`}>{facebookLabel}</span>{!facebookIconLabel && <span aria-hidden="true" className="text-[14px] transition-transform duration-200 group-hover:translate-x-0.5">↗</span>}</>}
       </a>
-      <div className={`${sizeClass} flex ${compact ? "w-fit" : "w-full sm:w-auto"} items-stretch rounded-full border border-[#f5f1e7]/35 bg-transparent font-semibold text-[#f5f1e7]`}>
+      <div className={`${sizeClass} flex ${compact ? "w-fit" : "w-full sm:w-auto"} items-stretch rounded-full border border-[#f5f1e7]/35 bg-transparent font-medium text-[#f5f1e7]`}>
         <a
           href={ZALO_LINK}
           target="_blank"
