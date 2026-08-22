@@ -271,7 +271,7 @@ export default function Home() {
               {decisionRows.map((row) => {
                 const rowContent = (
                   <>
-                    <span className="w-8 shrink-0 font-serif text-[15px] text-[#ad8e50] transition-colors duration-200 group-hover:text-[#1f3b2c]">{row.number}</span>
+                    <span className="w-8 shrink-0 font-ui text-[15px] font-medium text-[#ad8e50] transition-colors duration-200 group-hover:text-[#1f3b2c]">{row.number}</span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-[14px] font-semibold text-[#1f3b2c]">{row.title}</span>
                       <span className="mt-1 block text-[12px] leading-5 text-[#697363]">{row.detail}</span>
