@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowDown,
   ChevronRight,
-  Leaf,
   X,
   Zap,
 } from "lucide-react";
@@ -209,7 +208,7 @@ export default function Home() {
 
       <section className="border-b border-[#1f3b2c]/10 bg-[#f5f1e7] py-5">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#5d6a59] sm:px-8 lg:px-12">
-          <span className="flex items-center gap-2"><Leaf size={15} className="text-[#ad8e50]" /> {copy.hero.qualities[0]}</span>
+          <span>{copy.hero.qualities[0]}</span>
           <span className="hidden h-1 w-1 rounded-full bg-[#c9af77] sm:block" />
           <span>{copy.hero.qualities[1]}</span>
           <span className="hidden h-1 w-1 rounded-full bg-[#c9af77] sm:block" />
