@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { Link } from "wouter";
 import { SiteFooter } from "../components/SiteFooter";
@@ -36,9 +36,6 @@ export default function Story() {
   const [locale, setLocale] = useState<Locale>(() => { const saved = window.localStorage.getItem("morning-green-locale"); return saved === "en" || saved === "zh" ? saved : "vi"; });
   const copy = translations[locale];
   const story = copy.storyPage;
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
   useEffect(() => {
     const updateHeaderState = () => setIsHeaderCompact(window.scrollY > 40);
     updateHeaderState();

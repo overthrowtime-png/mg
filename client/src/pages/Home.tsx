@@ -140,7 +140,7 @@ export default function Home() {
           <nav className="hidden items-center justify-self-center gap-12 text-[14px] font-medium tracking-[0.015em] lg:flex" aria-label={copy.nav.main}>
             <button type="button" className={navItemClass(activeSection === "home")} onClick={() => handleHomeNav("home")}>{copy.nav.home}</button>
             <button type="button" className={navItemClass(activeSection === "menu")} onClick={() => handleHomeNav("menu")}>{copy.nav.products}</button>
-            <Link href="/story" className={`${navItemClass(activeSection === "story")} whitespace-nowrap`}>{copy.nav.story}</Link>
+            <a href="/story" className={`${navItemClass(activeSection === "story")} whitespace-nowrap`}>{copy.nav.story}</a>
             <button type="button" className={navItemClass(activeSection === "contact")} onClick={() => handleHomeNav("contact")}>{copy.nav.contact}</button>
           </nav>
 
@@ -187,7 +187,7 @@ export default function Home() {
             <p className="mt-6 max-w-[28rem] text-[15px] leading-7 text-[#d9ddcf] sm:text-base">{copy.hero.body}</p>
             <div className="mt-7 flex flex-wrap gap-4">
               <button onClick={() => scrollToId("discovery")} className="inline-flex items-center gap-2 rounded-[12px] bg-[#c9af77] px-6 py-3.5 text-[13px] font-semibold text-[#173527] transition hover:-translate-y-0.5 hover:bg-[#dec99a] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#173527]">{copy.discovery.cta} <ArrowDown size={14} /></button>
-              <Link href="/story" className="inline-flex items-center gap-2 rounded-[12px] border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-[#f5f1e7] transition hover:border-[#c9af77] hover:text-[#c9af77]">{copy.hero.why} <ChevronRight size={14} /></Link>
+              <a href="/story" className="inline-flex items-center gap-2 rounded-[12px] border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-[#f5f1e7] transition hover:border-[#c9af77] hover:text-[#c9af77]">{copy.hero.why} <ChevronRight size={14} /></a>
             </div>
 
           </div>
@@ -251,7 +251,7 @@ export default function Home() {
       <section id="story" className="relative scroll-mt-28 overflow-hidden bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.story.eyebrow}</p><h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] sm:text-5xl">{copy.story.title}<br /><em className="whitespace-pre-line text-[#c9af77]">{copy.story.titleAccent}</em></h2></div>
-          <div className="max-w-lg"><p className="text-[15px] leading-8 text-[#cbd4c4]">{copy.story.body}</p><Link href="/story" className="mt-8 inline-flex items-center gap-2 border-b border-[#c9af77] pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f5f1e7] transition hover:text-[#c9af77]">{copy.ui.readStory} <ChevronRight size={14} /></Link></div>
+          <div className="max-w-lg"><p className="text-[15px] leading-8 text-[#cbd4c4]">{copy.story.body}</p><a href="/story" className="mt-8 inline-flex items-center gap-2 border-b border-[#c9af77] pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f5f1e7] transition hover:text-[#c9af77]">{copy.ui.readStory} <ChevronRight size={14} /></a></div>
         </div>
       </section>
       <section id="order" className="scroll-mt-28 bg-white px-5 py-24 sm:px-8 lg:px-12 lg:py-28">
