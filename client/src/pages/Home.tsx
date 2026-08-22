@@ -238,7 +238,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex justify-center"><Link href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></Link></div>
+          <div className="mt-10 flex justify-center"><a href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></a></div>
         </div>
       </section>
       <section id="discovery" className="scroll-mt-28 bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
