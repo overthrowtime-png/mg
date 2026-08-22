@@ -18,7 +18,6 @@ export default function ProductDetail() {
   const [locale, setLocale] = useState<Locale>(() => { const saved = window.localStorage.getItem("morning-green-locale"); return saved === "en" || saved === "zh" ? saved : "vi"; });
   const copy = translations[locale];
   useEffect(() => { window.localStorage.setItem("morning-green-locale", locale); document.documentElement.lang = locale === "zh" ? "zh-CN" : locale; document.title = copy.meta.title; document.querySelector('meta[name="description"]')?.setAttribute("content", copy.meta.description); }, [locale, copy]);
-  useEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "auto" }); }, [productSlug]);
   const product = getProductBySlug(productSlug);
   if (!product) return <main className="min-h-screen bg-[#f5f1e7] px-5 py-12 text-[#1f3b2c]"><Link href="/shop" className="text-sm underline underline-offset-4">{copy.productDetail.backToShop}</Link><p className="mt-12 font-serif text-4xl">{copy.menu.noResults}</p></main>;
   const productIndex = MENU_PRODUCTS.findIndex((item) => item.code === product.code);
