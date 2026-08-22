@@ -21,18 +21,18 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
                 <p className="font-ui text-[clamp(1.35rem,2vw,2rem)] font-semibold tracking-[0.13em]">MORNING GREEN</p>
               </div>
             </div>
-            <p className="mt-8 max-w-md font-primary text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
-              Freshness,<br /><span className="text-[#c9af77]">Refined.</span>
+            <p className="mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
+              Freshness,<br /><em className="text-[#c9af77]">Refined.</em>
             </p>
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#c9af77]">{copy.footer.order}</p>
+            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p>
             <ContactCtas copy={copy.contact} className="mt-4" layout="stacked" compact facebookIconLabel facebookLabelOverride={copy.footer.facebookCtaLabel} />
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#c9af77]">{copy.footer.follow}</p>
+            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p>
             <div className="mt-4 grid gap-2.5 text-[13px] text-[#bfccbd]">
               <a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 transition-colors duration-200 hover:text-[#f5f1e7]">
                 <PlatformIcon platform="facebook" size={16} />{copy.footer.facebook}
@@ -49,7 +49,7 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
 
         <div className="flex flex-col justify-between gap-3 pt-5 text-[10px] text-[#8d9b89] sm:flex-row sm:items-center">
           <span>{copy.footer.copyright}</span>
-          {showHomeLink && <Link href="/" className="w-fit uppercase tracking-[0.02em] transition-colors duration-200 hover:text-[#f5f1e7]">{copy.footer.homeLink}</Link>}
+          {showHomeLink && <Link href="/" className="w-fit uppercase tracking-[0.16em] transition-colors duration-200 hover:text-[#f5f1e7]">{copy.footer.homeLink}</Link>}
         </div>
       </div>
     </footer>

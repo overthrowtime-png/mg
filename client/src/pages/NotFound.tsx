@@ -37,9 +37,9 @@ export default function NotFound() {
             </div>
           </div>
 
-          <h1 className="font-primary text-5xl font-normal text-slate-900 mb-2">404</h1>
+          <h1 className="font-serif text-5xl font-normal text-slate-900 mb-2">404</h1>
 
-          <h2 className="font-primary text-2xl font-normal text-slate-700 mb-4">
+          <h2 className="font-serif text-2xl font-normal text-slate-700 mb-4">
             {copy.notFound.title}
           </h2>
 
