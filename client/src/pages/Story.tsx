@@ -88,7 +88,7 @@ export default function Story() {
           <p className="story-hero-reveal text-[9px] font-semibold uppercase tracking-[0.24em] text-[#c9af77]">{story.heroChapter}</p>
           <p className="story-hero-reveal mt-3 text-[9px] font-semibold uppercase tracking-[0.3em] text-[#c9af77]/75">{story.heroEyebrow}</p>
           <h1 className="story-hero-reveal mt-6 max-w-[780px] font-serif text-[clamp(1.9rem,3.8vw,4.1rem)] font-normal leading-[1.12] tracking-[0.005em]"><span className="lg:whitespace-nowrap">{story.heroTitle}</span><br /><em className="text-[#c9af77]">{story.heroTitleAccent}</em></h1>
-          <p className="story-hero-reveal mt-7 max-w-md font-serif text-xl leading-[1.15] text-[#f5f1e7] sm:text-xl">{story.heroLead}</p>
+          <p className="story-hero-reveal mt-7 max-w-md font-ui text-xl leading-[1.15] text-[#f5f1e7] sm:text-xl">{story.heroLead}</p>
           <p className="story-hero-reveal mt-5 max-w-md text-[15px] leading-8 text-[#d9ddcf]">{story.heroBody}</p>
         </div>
         <span className="story-hero-reveal hidden self-end justify-self-end text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77] lg:block">{copy.ui.scrollToExplore} <ArrowDown className="mt-3" size={15} /></span>
