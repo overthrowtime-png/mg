@@ -249,7 +249,7 @@ export default function Home() {
 
       <section id="story" className="relative scroll-mt-28 overflow-hidden bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.story.eyebrow}</p><h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] sm:text-5xl">{copy.story.title}<br /><em className="text-[#c9af77]">{copy.story.titleAccent}</em></h2></div>
+          <div><p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.story.eyebrow}</p><h2 className="max-w-xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] sm:text-5xl">{copy.story.title}<br /><em className="whitespace-pre-line text-[#c9af77]">{copy.story.titleAccent}</em></h2></div>
           <div className="max-w-lg"><p className="text-[15px] leading-8 text-[#cbd4c4]">{copy.story.body}</p><Link href="/story" className="mt-8 inline-flex items-center gap-2 border-b border-[#c9af77] pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f5f1e7] transition hover:text-[#c9af77]">{copy.ui.readStory} <ChevronRight size={14} /></Link></div>
         </div>
       </section>
