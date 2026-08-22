@@ -59,7 +59,8 @@ export default function Story() {
           <img src="/morning-green-logo-160.png" alt="Morning Green" className={`w-auto rounded-[7px] border border-white/[0.12] object-contain transition-[height] duration-[280ms] ease-out ${isHeaderCompact ? "h-[48px] lg:h-[56px]" : "h-[52px] sm:h-[54px] lg:h-[72px]"}`} />
         </Link>
         <nav className="hidden items-center justify-self-center gap-12 story-nav lg:flex" aria-label={copy.ui.storyNavigation}>
-          <Link href="/#menu" className={`${navItemClass(false)} whitespace-nowrap`}>{copy.nav.menu}</Link>
+          <Link href="/" className={`${navItemClass(false)} whitespace-nowrap`}>{copy.nav.home}</Link>
+          <Link href="/#menu" className={`${navItemClass(false)} whitespace-nowrap`}>{copy.nav.products}</Link>
           <span className={`${navItemClass(true)} whitespace-nowrap`} aria-current="page">{copy.nav.story}</span>
           <Link href="/#order" className={`${navItemClass(false)} whitespace-nowrap`}>{copy.nav.contact}</Link>
         </nav>
@@ -71,7 +72,7 @@ export default function Story() {
           </button>
         </div>
       </div>
-      {menuOpen && <div id="story-mobile-site-menu" className="border-t border-white/[0.08] bg-[#173527] px-5 pb-7 pt-4 shadow-[0_18px_30px_rgba(5,36,25,0.18)] lg:hidden"><div className="grid gap-1 story-mobile-nav text-[#f5f1e7]"><Link href="/#menu" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.menu}</Link><span className="flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-[#c9af77]">{copy.nav.story}<span className="h-px w-8 bg-[#c9af77]" aria-hidden="true" /></span><Link href="/#order" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.contact}</Link></div><div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-5"><span className="story-label text-[#a7c19d]">{copy.localeName}</span><LocaleSwitcher locale={locale} onChange={setLocale} label={copy.ui.languageSelector} /></div></div>}
+      {menuOpen && <div id="story-mobile-site-menu" className="border-t border-white/[0.08] bg-[#173527] px-5 pb-7 pt-4 shadow-[0_18px_30px_rgba(5,36,25,0.18)] lg:hidden"><div className="grid gap-1 story-mobile-nav text-[#f5f1e7]"><Link href="/" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.home}</Link><Link href="/#menu" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.products}</Link><span className="flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-[#c9af77]">{copy.nav.story}<span className="h-px w-8 bg-[#c9af77]" aria-hidden="true" /></span><Link href="/#order" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.contact}</Link></div><div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-5"><span className="story-label text-[#a7c19d]">{copy.localeName}</span><LocaleSwitcher locale={locale} onChange={setLocale} label={copy.ui.languageSelector} /></div></div>}
     </header>
 
     <section className="story-hero relative flex min-h-[85svh] items-end overflow-hidden bg-[#173527] text-[#f5f1e7] lg:min-h-[82vh]">

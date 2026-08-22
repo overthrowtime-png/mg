@@ -71,7 +71,7 @@ function OrderButtons({ copy }: { copy: Translations }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHeaderCompact, setIsHeaderCompact] = useState(false);
-  const [activeSection, setActiveSection] = useState<"menu" | "story" | "contact">("menu");
+  const [activeSection, setActiveSection] = useState<"home" | "menu" | "story" | "contact">("home");
   const [locale, setLocale] = useState<Locale>(() => {
     const saved = window.localStorage.getItem("morning-green-locale");
     return saved === "en" || saved === "zh" ? saved : "vi";
@@ -87,15 +87,16 @@ export default function Home() {
       if (orderSection && scrollPosition >= orderSection.offsetTop) setActiveSection("contact");
       else if (storySection && scrollPosition >= storySection.offsetTop) setActiveSection("story");
       else if (menuSection && scrollPosition >= menuSection.offsetTop) setActiveSection("menu");
+      else setActiveSection("home");
     };
     updateHeaderState();
     window.addEventListener("scroll", updateHeaderState, { passive: true });
     return () => window.removeEventListener("scroll", updateHeaderState);
   }, []);
-  const handleHomeNav = (id: "menu" | "story" | "contact") => {
+  const handleHomeNav = (id: "home" | "menu" | "story" | "contact") => {
     setActiveSection(id);
     setMenuOpen(false);
-    scrollToId(id === "contact" ? "order" : id);
+    scrollToId(id === "home" ? "top" : id === "contact" ? "order" : id);
   };
   const navItemClass = (active: boolean) => `group relative py-2 text-[#f5f1e7] transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] after:absolute after:bottom-0 after:left-1/2 after:h-px after:-translate-x-1/2 after:bg-[#c9af77] after:transition-[width] after:duration-[250ms] after:ease-out after:content-[''] ${active ? "text-[#fffaf0] after:w-full" : "after:w-0 hover:after:w-full focus-visible:after:w-full"}`;
   useEffect(() => {
@@ -138,7 +139,8 @@ export default function Home() {
           </button>
 
           <nav className="hidden items-center justify-self-center gap-12 text-[14px] font-medium tracking-[0.015em] lg:flex" aria-label={copy.nav.main}>
-            <button type="button" className={navItemClass(activeSection === "menu")} onClick={() => handleHomeNav("menu")}>{copy.nav.menu}</button>
+            <button type="button" className={navItemClass(activeSection === "home")} onClick={() => handleHomeNav("home")}>{copy.nav.home}</button>
+            <button type="button" className={navItemClass(activeSection === "menu")} onClick={() => handleHomeNav("menu")}>{copy.nav.products}</button>
             <Link href="/story" className={`${navItemClass(activeSection === "story")} whitespace-nowrap`}>{copy.nav.story}</Link>
             <button type="button" className={navItemClass(activeSection === "contact")} onClick={() => handleHomeNav("contact")}>{copy.nav.contact}</button>
           </nav>
@@ -164,8 +166,8 @@ export default function Home() {
         {menuOpen && (
           <div id="mobile-site-menu" className="border-t border-white/[0.08] bg-[#173527] px-5 pb-7 pt-4 shadow-[0_18px_30px_rgba(5,36,25,0.18)] lg:hidden">
             <div className="grid gap-1 text-[1.05rem] font-medium text-[#f5f1e7]">
-              {[['menu', copy.nav.menu], ['story', copy.nav.story], ['contact', copy.nav.contact]].map(([id, label]) => (
-                <button key={id} type="button" className={`flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-left transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] ${activeSection === id ? "text-[#c9af77]" : ""}`} onClick={() => { if (id === "story") { setMenuOpen(false); setActiveSection("story"); window.location.href = "/story"; } else handleHomeNav(id as "menu" | "contact"); }}>
+              {[['home', copy.nav.home], ['menu', copy.nav.products], ['story', copy.nav.story], ['contact', copy.nav.contact]].map(([id, label]) => (
+                <button key={id} type="button" className={`flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-left transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] ${activeSection === id ? "text-[#c9af77]" : ""}`} onClick={() => { if (id === "story") { setMenuOpen(false); setActiveSection("story"); window.location.href = "/story"; } else handleHomeNav(id as "home" | "menu" | "contact"); }}>
                   <span>{label}</span>{activeSection === id && <span className="h-px w-8 bg-[#c9af77]" aria-hidden="true" />}
                 </button>
               ))}
