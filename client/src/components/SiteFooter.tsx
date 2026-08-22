@@ -24,7 +24,6 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
             <p className="mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
               Freshness,<br /><em className="text-[#c9af77]">Refined.</em>
             </p>
-            <p className="mt-4 max-w-sm text-[13px] leading-6 text-[#bfccbd]">{copy.footer.small}</p>
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
