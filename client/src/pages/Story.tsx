@@ -12,6 +12,14 @@ function LocaleSwitcher({ locale, onChange, label }: { locale: StoryLocale; onCh
   return <div className="flex items-center gap-2 text-[9px] font-medium tracking-[0.06em] text-[#f5f1e7]" aria-label={label}>{LOCALE_OPTIONS.map((option, index) => <span key={option.id} className="flex items-center gap-2">{index > 0 && <span className="text-[#c9af77]/60">·</span>}<button type="button" aria-label={labels[option.id]} aria-pressed={locale === option.id} onClick={() => onChange(option.id)} className={`transition hover:text-[#c9af77] ${locale === option.id ? "text-[#c9af77] underline underline-offset-4" : "opacity-70"}`}>{option.label}</button></span>)}</div>;
 }
 
+function renderBeliefTitle(locale: Locale, title: string) {
+  if (locale !== "vi") return title;
+  const phrase = "không cần bắt đầu";
+  const phraseStart = title.indexOf(phrase);
+  if (phraseStart < 0) return title;
+  return <>{title.slice(0, phraseStart)}<span className="whitespace-nowrap">{phrase}</span>{title.slice(phraseStart + phrase.length)}</>;
+}
+
 export default function Story() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHeaderCompact, setIsHeaderCompact] = useState(false);
@@ -89,7 +97,7 @@ export default function Story() {
 
     <section className="bg-[#f5f1e7] px-5 py-24 sm:px-8 lg:px-12 lg:py-36"><div className="mx-auto max-w-7xl"><div className="max-w-3xl" data-story-reveal><p className="story-reveal text-[9px] font-semibold uppercase tracking-[0.28em] text-[#ad8e50]">{story.realEyebrow}</p><h2 className="story-reveal mt-5 font-serif text-[clamp(2.1rem,4.2vw,4.2rem)] font-normal leading-[1.16] tracking-[0.005em]">{story.realTitle}</h2><p className="story-reveal mt-8 max-w-xl text-[15px] leading-8 text-[#697363]">{story.realBody}</p></div><div className="mt-14 grid gap-8 border-t border-[#1f3b2c]/14 pt-8 md:grid-cols-3">{story.moments.map((moment, index) => <article key={moment.time} data-story-reveal className="story-reveal"><div className={`relative aspect-[1.15] overflow-hidden ${index === 0 ? "bg-[#e8ead9]" : index === 1 ? "bg-[#e8e4d7]" : "bg-[#e2e8df]"}`}><img src={moment.image} alt={moment.title} loading="lazy" className="h-full w-full object-contain object-center p-2 transition duration-700 hover:scale-[1.02] sm:p-3" /></div><p className="mt-5 font-serif text-3xl text-[#ad8e50]">{moment.time}</p><h3 className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f3b2c]">{moment.title}</h3><p className="mt-3 max-w-xs text-[14px] leading-7 text-[#697363]">{moment.body}</p></article>)}</div></div></section>
 
-    <section className="bg-[#f5f1e7] px-5 py-20 sm:px-8 lg:px-12 lg:py-32"><div data-story-reveal className="story-reveal mx-auto max-w-7xl"><p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-[#ad8e50]">{story.beliefEyebrow}</p><div className="mt-6 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-16"><h2 className="max-w-2xl font-serif text-[clamp(1.8rem,3.2vw,3.5rem)] font-normal leading-[1.12] tracking-[0.005em] text-[#1f3b2c] text-balance">{story.beliefTitle}</h2><p className="max-w-2xl font-serif text-[clamp(1.8rem,3.2vw,3.5rem)] font-normal leading-[1.12] tracking-[0.005em] text-[#1f3b2c] text-balance lg:justify-self-end">{story.beliefBody}</p></div></div></section>
+    <section className="bg-[#f5f1e7] px-5 py-20 sm:px-8 lg:px-12 lg:py-32"><div data-story-reveal className="story-reveal mx-auto max-w-7xl"><p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-[#ad8e50]">{story.beliefEyebrow}</p><div className="mt-6 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-16"><h2 className="max-w-2xl font-serif text-[clamp(1.8rem,3.2vw,3.5rem)] font-normal leading-[1.12] tracking-[0.005em] text-[#1f3b2c] text-balance">{renderBeliefTitle(locale, story.beliefTitle)}</h2><p className="max-w-2xl font-serif text-[clamp(1.8rem,3.2vw,3.5rem)] font-normal leading-[1.12] tracking-[0.005em] text-[#1f3b2c] text-balance lg:justify-self-end">{story.beliefBody}</p></div></div></section>
 
 
     <SiteFooter copy={copy} showHomeLink />
