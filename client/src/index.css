@@ -363,3 +363,53 @@ button { cursor: pointer; }
 @media (max-width: 767px) {
   .story-footer-statement { line-height: 1.22; }
 }
+
+/* Attached Our Story Hero refinement: quiet premium editorial hierarchy. */
+.story-hero-overlay {
+  background: linear-gradient(90deg, rgba(15, 48, 35, .78) 0%, rgba(15, 48, 35, .68) 25%, rgba(15, 48, 35, .38) 45%, rgba(15, 48, 35, .12) 58%, rgba(15, 48, 35, 0) 68%);
+}
+.story-scroll-cue {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.story-scroll-arrow { animation: storyScrollArrow 2.4s ease-in-out infinite; }
+@keyframes storyScrollArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+.story-page .story-hero .story-h1 {
+  max-width: 620px;
+  line-height: 1.02;
+}
+.story-page .story-hero .story-lead {
+  max-width: 540px;
+  line-height: 1.62;
+}
+.story-page .story-locale { font-size: 12px; letter-spacing: .04em; }
+@media (min-width: 1024px) {
+  .story-page { --story-h1-size: clamp(58px, 4.5vw, 64px); --story-lead-size: 18px; }
+  .story-page .story-hero { min-height: 82vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-scroll-arrow { animation: none; }
+}
+
+.story-hero-art { background-position: center; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .story-hero-art { background-position: left center; background-size: auto 112%; }
+  .story-page { --story-h1-size: clamp(46px, 6vw, 54px); --story-lead-size: 18px; }
+  .story-page .story-hero .story-h1 { max-width: 54vw; }
+  .story-page .story-hero .story-lead { max-width: 480px; }
+}
+@media (max-width: 767px) {
+  .story-hero-art { background-position: 10% center; background-size: auto 112%; opacity: .58; }
+  .story-hero-overlay {
+    background: linear-gradient(180deg, rgba(15, 48, 35, .72) 0%, rgba(15, 48, 35, .78) 44%, rgba(15, 48, 35, .94) 100%);
+  }
+  .story-page .story-hero .story-h1 { max-width: 100%; }
+  .story-page .story-hero .story-lead { max-width: 100%; }
+}

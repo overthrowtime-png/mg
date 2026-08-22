@@ -56,7 +56,7 @@ export default function Story() {
     <header className={`story-site-header fixed inset-x-0 top-0 z-40 border-b border-white/[0.07] text-[#f5f1e7] transition-[height,background-color,backdrop-filter] duration-[280ms] ease-out ${isHeaderCompact ? "h-[68px] bg-[#173527]/92 backdrop-blur-md lg:h-[72px]" : "h-[72px] bg-[#173527] lg:h-[90px]"}`}>
       <div className="mx-auto grid h-full w-full max-w-[1320px] grid-cols-[auto_1fr_auto] items-center gap-5 px-5 sm:px-8 lg:px-10">
         <Link href="/" className="group inline-flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]">
-          <img src="/morning-green-logo-160.png" alt="Morning Green" className={`w-auto rounded-[7px] border border-white/[0.12] object-contain transition-[height] duration-[280ms] ease-out ${isHeaderCompact ? "h-[48px] lg:h-[52px]" : "h-[52px] sm:h-[54px] lg:h-[66px]"}`} />
+          <img src="/morning-green-logo-160.png" alt="Morning Green" className={`w-auto rounded-[7px] border border-white/[0.12] object-contain transition-[height] duration-[280ms] ease-out ${isHeaderCompact ? "h-[48px] lg:h-[56px]" : "h-[52px] sm:h-[54px] lg:h-[72px]"}`} />
         </Link>
         <nav className="hidden items-center justify-self-center gap-12 story-nav lg:flex" aria-label={copy.ui.storyNavigation}>
           <Link href="/#menu" className={`${navItemClass(false)} whitespace-nowrap`}>{copy.nav.menu}</Link>
@@ -74,28 +74,26 @@ export default function Story() {
       {menuOpen && <div id="story-mobile-site-menu" className="border-t border-white/[0.08] bg-[#173527] px-5 pb-7 pt-4 shadow-[0_18px_30px_rgba(5,36,25,0.18)] lg:hidden"><div className="grid gap-1 story-mobile-nav text-[#f5f1e7]"><Link href="/#menu" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.menu}</Link><span className="flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-[#c9af77]">{copy.nav.story}<span className="h-px w-8 bg-[#c9af77]" aria-hidden="true" /></span><Link href="/#order" className="border-b border-white/[0.08] px-1 py-4 transition-colors duration-[250ms] hover:text-[#c9af77]" onClick={() => setMenuOpen(false)}>{copy.nav.contact}</Link></div><div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-5"><span className="story-label text-[#a7c19d]">{copy.localeName}</span><LocaleSwitcher locale={locale} onChange={setLocale} label={copy.ui.languageSelector} /></div></div>}
     </header>
 
-    <section className="story-hero relative flex min-h-[74svh] items-end overflow-hidden bg-[#173527] text-[#f5f1e7] lg:min-h-[82vh]">
+    <section className="story-hero relative flex min-h-[85svh] items-end overflow-hidden bg-[#173527] text-[#f5f1e7] lg:min-h-[82vh]">
       <div className="absolute inset-0 bg-[#173527]" aria-hidden="true" />
-      <div className="absolute inset-0 hidden bg-cover bg-center opacity-[0.86] lg:block lg:opacity-100" style={{ backgroundImage: "url('/story-hero-user-composite.png')", backgroundPosition: "center" }} aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#173527]/88 via-[#173527]/54 to-transparent lg:from-[#173527]/84 lg:via-[#173527]/38 lg:to-transparent" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" aria-hidden="true" />
+      <div className="story-hero-art absolute inset-0 bg-cover opacity-80 lg:opacity-100" style={{ backgroundImage: "url('/story-hero-user-composite.png')" }} aria-hidden="true" />
+      <div className="story-hero-overlay absolute inset-0" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#173527]/50 via-transparent to-transparent" aria-hidden="true" />
       <div className="pointer-events-none absolute right-[8%] top-1/2 hidden -translate-y-1/2 items-center gap-4 lg:flex" aria-hidden="true">
         <span className="font-serif text-[clamp(2.8rem,5.6vw,5.6rem)] font-normal leading-none text-[#a7c19d]/10">01</span>
         <span className="h-48 w-px bg-[#c9af77]/35" />
       </div>
-      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-36 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:px-12 lg:pb-18 lg:pt-28">
-        <div className="max-w-2xl">
+      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-36 lg:grid-cols-[minmax(0,620px)_1fr] lg:items-end lg:px-12 lg:pb-20 lg:pt-32">
+        <div className="max-w-[620px]">
           <p className="story-hero-reveal story-label text-[#c9af77]">{story.heroChapter}</p>
-          <p className="story-hero-reveal mt-3 story-label text-[#c9af77]/75">{story.heroEyebrow}</p>
-          <h1 className="story-hero-reveal mt-6 story-h1"><span className="lg:whitespace-nowrap">{story.heroTitle}</span>{" "}<br /><em className="text-[#c9af77]">{story.heroTitleAccent}</em></h1>
-          <p className="story-hero-reveal mt-7 story-lead text-[#f5f1e7]">{story.heroLead}</p>
-          <p className="story-hero-reveal mt-5 story-body text-[#d9ddcf]">{story.heroBody}</p>
+          <h1 className="story-hero-reveal mt-8 story-h1"><span className="lg:whitespace-nowrap">{story.heroTitle}</span>{" "}<br /><em className="text-[#d9c79b]">{story.heroTitleAccent}</em></h1>
+          <p className="story-hero-reveal mt-8 story-lead text-[#f5f1e7]/90">{story.heroLead}</p>
+          <a href="#story-chapter-02" className="story-hero-reveal story-scroll-cue mt-10 inline-flex items-center gap-3 text-[#d9c79b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d9c79b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#173527] lg:mt-11"><span>{copy.ui.scrollToExplore}</span><ArrowDown className="story-scroll-arrow" size={15} aria-hidden="true" /></a>
         </div>
-        <span className="story-hero-reveal hidden self-end justify-self-end story-label text-[#c9af77] lg:block">{copy.ui.scrollToExplore} <ArrowDown className="mt-3" size={15} /></span>
       </div>
     </section>
 
-    <section className="bg-[#f5f1e7] px-5 py-24 sm:px-8 lg:px-12 lg:py-36"><div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.75fr_1.25fr] lg:items-start"><div data-story-reveal className="story-reveal"><p className="story-label text-[#ad8e50]">{story.whyEyebrow}</p><h2 className="mt-5 story-h2">{story.whyTitle}</h2></div><div data-story-reveal className="story-reveal max-w-2xl lg:pt-12"><p className="story-lead text-[#1f3b2c]">{story.whyBody}</p><p className="mt-8 story-body text-[#697363]">{story.whyClosing}</p></div></div></section>
+    <section id="story-chapter-02" className="bg-[#f5f1e7] px-5 py-24 sm:px-8 lg:px-12 lg:py-36"><div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.75fr_1.25fr] lg:items-start"><div data-story-reveal className="story-reveal"><p className="story-label text-[#ad8e50]">{story.whyEyebrow}</p><h2 className="mt-5 story-h2">{story.whyTitle}</h2></div><div data-story-reveal className="story-reveal max-w-2xl lg:pt-12"><p className="story-lead text-[#1f3b2c]">{story.heroBody}</p><p className="mt-8 story-body text-[#697363]">{story.whyBody}</p></div></div></section>
 
     <section className="story-dark-chapter relative isolate overflow-hidden bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-36"><div className="absolute inset-0 bg-cover bg-center opacity-80 lg:opacity-100" style={{ backgroundImage: "url(\"/bg-s01-gon-bung-nhe-tenh.png\")", backgroundPosition: "center" }} aria-hidden="true" /><div className="absolute inset-0 bg-gradient-to-r from-[#1f3b2c]/96 via-[#1f3b2c]/78 to-[#1f3b2c]/34" aria-hidden="true" /><div className="absolute inset-0 bg-gradient-to-t from-[#1f3b2c]/58 via-transparent to-[#1f3b2c]/18" aria-hidden="true" /><div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end"><div data-story-reveal className="story-reveal"><p className="story-label text-[#c9af77]">{story.greenTitle}</p><h2 className="mt-6 max-w-3xl story-h2">Morning<br /><em className="text-[#c9af77]">Green.</em></h2></div><p data-story-reveal className="story-reveal story-body text-[#cbd4c4]">{story.greenBody}</p></div></section>
 
