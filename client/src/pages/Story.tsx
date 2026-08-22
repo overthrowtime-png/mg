@@ -86,7 +86,7 @@ export default function Story() {
       <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-36 lg:grid-cols-[minmax(0,620px)_1fr] lg:items-end lg:px-12 lg:pb-20 lg:pt-32">
         <div className="max-w-[620px]">
           <p className="story-hero-reveal story-label text-[#c9af77]">{story.heroChapter}</p>
-          <h1 className="story-hero-reveal mt-8 story-h1"><span className="lg:whitespace-nowrap">{story.heroTitle}</span>{" "}<br /><em className="text-[#d9c79b]">{story.heroTitleAccent}</em></h1>
+          <h1 className="story-hero-reveal mt-8 story-h1"><span className="lg:whitespace-nowrap">{story.heroTitle}</span><br /><em className="whitespace-pre-line text-[#d9c79b]">{story.heroTitleAccent}</em></h1>
           <p className="story-hero-reveal mt-8 story-lead text-[#f5f1e7]/90">{story.heroLead}</p>
           <a href="#story-chapter-02" className="story-hero-reveal story-scroll-cue mt-10 inline-flex items-center gap-3 text-[#d9c79b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d9c79b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#173527] lg:mt-11"><span>{copy.ui.scrollToExplore}</span><ArrowDown className="story-scroll-arrow" size={15} aria-hidden="true" /></a>
         </div>
