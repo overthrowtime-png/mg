@@ -76,8 +76,8 @@ export default function Story() {
 
     <section className="story-hero relative flex min-h-[74svh] items-end overflow-hidden bg-[#173527] text-[#f5f1e7] lg:min-h-[82vh]">
       <div className="absolute inset-0 bg-[#173527]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden opacity-75 lg:block" aria-hidden="true"><div className="absolute inset-0 bg-cover bg-right" style={{ backgroundImage: "url('/story-hero-untitled-design.png')", backgroundPosition: "right center" }} /></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#173527] via-[#173527]/88 to-[#173527]/18 lg:via-[#173527]/68 lg:to-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 hidden bg-cover bg-center opacity-[0.86] lg:block lg:opacity-100" style={{ backgroundImage: "url('/story-hero-user-composite.png')", backgroundPosition: "center" }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#173527]/88 via-[#173527]/54 to-transparent lg:from-[#173527]/84 lg:via-[#173527]/38 lg:to-transparent" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" aria-hidden="true" />
       <div className="pointer-events-none absolute right-[8%] top-1/2 hidden -translate-y-1/2 items-center gap-4 lg:flex" aria-hidden="true">
         <span className="font-serif text-[clamp(2.8rem,5.6vw,5.6rem)] font-normal leading-none text-[#a7c19d]/10">01</span>
