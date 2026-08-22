@@ -21,18 +21,18 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
                 <p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p>
               </div>
             </div>
-            <p className="mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
+            <p className="story-footer-statement mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
               Freshness,<br /><em className="text-[#c9af77]">Refined.</em>
             </p>
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p>
+            <p className="story-footer-label text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.order}</p>
             <ContactCtas copy={copy.contact} className="mt-4" layout="stacked" compact facebookIconLabel facebookLabelOverride={copy.footer.facebookCtaLabel} />
           </div>
 
           <div className="min-w-0 md:col-span-1 lg:col-span-1">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p>
+            <p className="story-footer-label text-[9px] font-semibold uppercase tracking-[0.26em] text-[#c9af77]">{copy.footer.follow}</p>
             <div className="mt-4 grid gap-2.5 text-[13px] text-[#bfccbd]">
               <a href={FACEBOOK_LINK} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 transition-colors duration-200 hover:text-[#f5f1e7]">
                 <PlatformIcon platform="facebook" size={16} />{copy.footer.facebook}

@@ -192,3 +192,174 @@ button { cursor: pointer; }
   .story-finale-bottle { transition: none; }
   .story-image-break, .story-ingredient-frame { background-attachment: scroll; }
 }
+
+
+/* Our Story typography refinement: six restrained levels, scoped to preserve other pages. */
+.story-page {
+  --story-label-size: 12px;
+  --story-nav-size: 14px;
+  --story-body-size: 16px;
+  --story-lead-size: 21px;
+  --story-statement-size: 36px;
+  --story-h2-size: 46px;
+  --story-h1-size: clamp(52px, 5.2vw, 72px);
+}
+.story-label {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: var(--story-label-size);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.story-locale {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+}
+.story-nav {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: var(--story-nav-size);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+}
+.story-mobile-nav {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.story-h1 {
+  font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
+  font-size: var(--story-h1-size);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.story-h2 {
+  font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
+  font-size: var(--story-h2-size);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.story-h3 {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+.story-lead {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: var(--story-lead-size);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  max-width: 700px;
+}
+.story-body {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: var(--story-body-size);
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: -0.005em;
+  max-width: 620px;
+}
+.story-body-sm {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.68;
+  letter-spacing: -0.005em;
+  max-width: 620px;
+}
+.story-statement {
+  font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
+  font-size: var(--story-statement-size);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.story-caption {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.story-page .footer-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+}
+.story-page .footer-body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .story-page {
+    --story-label-size: 11px;
+    --story-lead-size: 18px;
+    --story-statement-size: 26px;
+    --story-h2-size: 32px;
+    --story-h1-size: clamp(40px, 10.5vw, 44px);
+  }
+  .story-h1 { line-height: 1.05; letter-spacing: -0.025em; }
+  .story-h2 { line-height: 1.12; letter-spacing: -0.015em; }
+  .story-lead { line-height: 1.55; }
+  .story-body,
+  .story-body-sm { font-size: 15px; line-height: 1.7; }
+  .story-h3 { font-size: 18px; }
+  .story-statement { line-height: 1.22; }
+}
+:lang(zh-CN) .story-h1,
+:lang(zh) .story-h1,
+:lang(zh-CN) .story-h2,
+:lang(zh) .story-h2,
+:lang(zh-CN) .story-statement,
+:lang(zh) .story-statement {
+  font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+  letter-spacing: 0;
+}
+:lang(zh-CN) .story-locale,
+:lang(zh) .story-locale,
+:lang(zh-CN) .story-nav,
+:lang(zh) .story-nav,
+:lang(zh-CN) .story-mobile-nav,
+:lang(zh) .story-mobile-nav,
+:lang(zh-CN) .story-label,
+:lang(zh) .story-label,
+:lang(zh-CN) .story-h3,
+:lang(zh) .story-h3,
+:lang(zh-CN) .story-lead,
+:lang(zh) .story-lead,
+:lang(zh-CN) .story-body,
+:lang(zh) .story-body,
+:lang(zh-CN) .story-body-sm,
+:lang(zh) .story-body-sm,
+:lang(zh-CN) .story-caption,
+:lang(zh) .story-caption {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 0;
+}
+.story-footer-statement {
+  font-size: var(--story-statement-size);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.story-footer-label {
+  font-size: var(--story-label-size);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 767px) {
+  .story-footer-statement { line-height: 1.22; }
+}
