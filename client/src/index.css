@@ -1,18 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--mg-font-body);
-  --font-serif: var(--mg-font-display);
-  --font-display: var(--mg-font-display);
-  --font-ui: var(--mg-font-body);
-  --text-hero: var(--mg-text-hero);
-  --text-h1: var(--mg-text-h1);
-  --text-h2: var(--mg-text-h2);
-  --text-h3: var(--mg-text-h3);
-  --text-body-lg: var(--mg-text-body-lg);
-  --text-body: var(--mg-text-body);
-  --text-small: var(--mg-text-small);
-  --text-label: var(--mg-text-label);
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-serif: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
   --color-background: oklch(0.96 0.015 96);
   --color-foreground: oklch(0.28 0.055 153);
   --color-card: oklch(0.98 0.01 96);
@@ -22,17 +12,7 @@
 }
 
 :root {
-  --mg-font-display: "Cormorant Garamond", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
-  --mg-font-body: "Manrope", "Noto Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  --mg-text-hero: clamp(2.75rem, 7vw, 5.125rem);
-  --mg-text-h1: clamp(2.5rem, 5vw, 4rem);
-  --mg-text-h2: clamp(2rem, 4vw, 3.25rem);
-  --mg-text-h3: clamp(1.75rem, 2.8vw, 2rem);
-  --mg-text-body-lg: 1.125rem;
-  --mg-text-body: 1rem;
-  --mg-text-small: 0.8125rem;
-  --mg-text-label: 0.6875rem;
-  font-family: var(--mg-font-body);
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
   color: #1f3b2c;
   background: #f5f1e7;
   font-synthesis: none;
@@ -48,19 +28,11 @@ body { margin: 0; min-width: 320px; background: #f5f1e7; }
 button, a, input, textarea { font: inherit; }
 button { cursor: pointer; }
 .font-serif,
-.font-editorial { font-family: var(--mg-font-display); }
-.font-ui { font-family: var(--mg-font-body); }
-.type-hero { font-family: var(--mg-font-display); font-size: var(--mg-text-hero); font-weight: 400; line-height: 1.04; letter-spacing: -0.01em; text-wrap: balance; }
-.type-h1 { font-family: var(--mg-font-display); font-size: var(--mg-text-h1); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
-.type-h2 { font-family: var(--mg-font-display); font-size: var(--mg-text-h2); font-weight: 400; line-height: 1.1; letter-spacing: -0.005em; text-wrap: balance; }
-.type-h3 { font-family: var(--mg-font-display); font-size: var(--mg-text-h3); font-weight: 500; line-height: 1.15; }
-.type-body-lg { font-family: var(--mg-font-body); font-size: var(--mg-text-body-lg); line-height: 1.6; }
-.type-body { font-family: var(--mg-font-body); font-size: var(--mg-text-body); line-height: 1.65; }
-.type-small { font-family: var(--mg-font-body); font-size: var(--mg-text-small); line-height: 1.5; }
-.type-label { font-family: var(--mg-font-body); font-size: var(--mg-text-label); font-weight: 600; letter-spacing: 0.1em; }
+.font-editorial { font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif; }
+.font-ui { font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
 
 .hero-heading {
-  font-family: var(--mg-font-display);
+  font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
   font-weight: 400;
   font-synthesis: none;
   text-wrap: balance;
@@ -73,16 +45,12 @@ button { cursor: pointer; }
 }
 
 :lang(zh-CN) .font-serif,
-:lang(zh) .font-serif,
-:lang(zh-CN) .font-editorial,
-:lang(zh) .font-editorial {
+:lang(zh) .font-serif {
   font-family: "Noto Serif SC", "Songti SC", STSong, serif;
   letter-spacing: 0;
 }
 :lang(zh-CN) .font-sans,
 :lang(zh) .font-sans,
-:lang(zh-CN) .font-ui,
-:lang(zh) .font-ui,
 :lang(zh-CN) body,
 :lang(zh) body {
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;

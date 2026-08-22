@@ -18,7 +18,7 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
             <div className="flex items-center gap-4">
               <img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" />
               <div>
-                <p className="font-ui text-[clamp(1.35rem,2vw,2rem)] font-semibold tracking-[0.13em]">MORNING GREEN</p>
+                <p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p>
               </div>
             </div>
             <p className="mt-8 max-w-md font-serif text-[clamp(1.7rem,3vw,3rem)] leading-[1.04] tracking-[0.005em] text-[#f5f1e7]">
