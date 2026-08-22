@@ -217,7 +217,7 @@ export default function Home() {
 
       <section id="menu" className="relative scroll-mt-28 overflow-hidden bg-[#f5f1e7] px-5 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8 lg:px-12 lg:pb-10 lg:pt-10">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-8 pb-10 lg:flex-row lg:items-end lg:pb-14">
+          <div className="flex flex-col justify-between gap-8 pb-4 lg:flex-row lg:items-end lg:pb-6">
             <div>
               <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#ad8e50]">{copy.menu.featuredEyebrow}</p>
               <h2 className="max-w-2xl font-serif text-[clamp(2.5rem,5vw,4.6rem)] font-normal leading-[0.98] tracking-[-0.035em] text-[#1f3b2c]">{copy.menu.featuredTitle}</h2>
@@ -225,7 +225,7 @@ export default function Home() {
             </div>
             <span className="hidden max-w-[170px] font-serif text-2xl leading-tight text-[#1f3b2c] lg:block">Freshness,<br /><em className="text-[#ad8e50]">Refined.</em></span>
           </div>
-          <div className="grid gap-x-8 gap-y-12 pt-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-x-8 gap-y-12 pt-0 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURED_PRODUCTS.map((product) => (
               <Link key={product.code} href={`/shop/${product.code.toLowerCase()}`} className="shop-card group relative block border-b border-[#1f3b2c]/14 pb-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ad8e50] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f5f1e7]">
                 <div className="relative h-[360px] overflow-hidden rounded-[12px] bg-[#e8ead9] sm:h-[410px]">
