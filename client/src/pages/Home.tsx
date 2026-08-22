@@ -138,7 +138,7 @@ export default function Home() {
 
           <nav className="hidden items-center justify-self-center gap-12 text-[14px] font-medium tracking-[0.015em] lg:flex" aria-label={copy.nav.main}>
             <button type="button" className={navItemClass(activeSection === "home")} onClick={() => handleHomeNav("home")}>{copy.nav.home}</button>
-            <button type="button" className={navItemClass(activeSection === "menu")} onClick={() => handleHomeNav("menu")}>{copy.nav.products}</button>
+            <a href="#menu" className={navItemClass(activeSection === "menu")}>{copy.nav.products}</a>
             <a href="/story" className={`${navItemClass(activeSection === "story")} whitespace-nowrap`}>{copy.nav.story}</a>
             <button type="button" className={navItemClass(activeSection === "contact")} onClick={() => handleHomeNav("contact")}>{copy.nav.contact}</button>
           </nav>
@@ -165,7 +165,7 @@ export default function Home() {
           <div id="mobile-site-menu" className="border-t border-white/[0.08] bg-[#173527] px-5 pb-7 pt-4 shadow-[0_18px_30px_rgba(5,36,25,0.18)] lg:hidden">
             <div className="grid gap-1 text-[1.05rem] font-medium text-[#f5f1e7]">
               {[['home', copy.nav.home], ['menu', copy.nav.products], ['story', copy.nav.story], ['contact', copy.nav.contact]].map(([id, label]) => (
-                <button key={id} type="button" className={`flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-left transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] ${activeSection === id ? "text-[#c9af77]" : ""}`} onClick={() => { if (id === "story") { setMenuOpen(false); setActiveSection("story"); window.location.href = "/story"; } else handleHomeNav(id as "home" | "menu" | "contact"); }}>
+                <button key={id} type="button" className={`flex items-center justify-between border-b border-white/[0.08] px-1 py-4 text-left transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] ${activeSection === id ? "text-[#c9af77]" : ""}`} onClick={() => { if (id === "story") { setMenuOpen(false); setActiveSection("story"); window.location.href = "/story"; } else if (id === "menu") { setMenuOpen(false); window.location.hash = "menu"; } else handleHomeNav(id as "home" | "menu" | "contact"); }}>
                   <span>{label}</span>{activeSection === id && <span className="h-px w-8 bg-[#c9af77]" aria-hidden="true" />}
                 </button>
               ))}
