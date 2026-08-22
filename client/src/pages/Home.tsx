@@ -124,10 +124,9 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden bg-[#f5f1e7] text-[#1f3b2c]">
       <header className={`fixed inset-x-0 top-0 z-40 border-b border-white/[0.07] text-[#f5f1e7] transition-[height,background-color,backdrop-filter] duration-[280ms] ease-out ${isHeaderCompact ? "h-[68px] bg-[#173527]/92 backdrop-blur-md lg:h-[72px]" : "h-[72px] bg-[#173527] lg:h-[90px]"}`}>
         <div className={`mx-auto grid h-full w-full max-w-[1320px] grid-cols-[auto_1fr_auto] items-center gap-5 px-5 transition-[padding] duration-[280ms] ease-out sm:px-8 lg:px-10 ${isHeaderCompact ? "lg:px-10" : "lg:px-10"}`}>
-          <button
-            type="button"
-            onClick={() => scrollToId("top")}
-            className="group flex items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9af77] focus-visible:ring-offset-2 focus-visible:ring-offset-[#173527]"
+          <a
+            href="/"
+            className="group flex items-center text-left focus:outline-none focus-visible:ring-2 focus:ring-[#c9af77] focus:ring-offset-2 focus:ring-offset-[#173527]"
             aria-label={copy.ui.backToTop}
           >
             <img
@@ -135,7 +134,7 @@ export default function Home() {
               alt="Morning Green"
               className={`w-auto rounded-[7px] border border-white/[0.12] object-contain transition-[height] duration-[280ms] ease-out ${isHeaderCompact ? "h-[48px] lg:h-[52px]" : "h-[52px] sm:h-[54px] lg:h-[66px]"}`}
             />
-          </button>
+          </a>
 
           <nav className="hidden items-center justify-self-center gap-12 text-[14px] font-medium tracking-[0.015em] lg:flex" aria-label={copy.nav.main}>
             <button type="button" className={navItemClass(activeSection === "home")} onClick={() => handleHomeNav("home")}>{copy.nav.home}</button>
