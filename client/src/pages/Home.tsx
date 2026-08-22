@@ -99,6 +99,11 @@ export default function Home() {
   };
   const navItemClass = (active: boolean) => `group relative py-2 text-[#f5f1e7] transition-colors duration-[250ms] hover:text-[#c9af77] focus:outline-none focus-visible:text-[#c9af77] after:absolute after:bottom-0 after:left-1/2 after:h-px after:-translate-x-1/2 after:bg-[#c9af77] after:transition-[width] after:duration-[250ms] after:ease-out after:content-[''] ${active ? "text-[#fffaf0] after:w-full" : "after:w-0 hover:after:w-full focus-visible:after:w-full"}`;
   useEffect(() => {
+    if (window.location.hash !== "#menu") return;
+    const timer = window.setTimeout(() => document.getElementById("menu")?.scrollIntoView({ behavior: "auto", block: "start" }), 80);
+    return () => window.clearTimeout(timer);
+  }, []);
+  useEffect(() => {
     window.localStorage.setItem("morning-green-locale", locale);
     document.documentElement.lang = locale === "zh" ? "zh-CN" : locale;
     document.title = copy.meta.title;
@@ -228,16 +233,16 @@ export default function Home() {
           <div className="grid gap-x-8 gap-y-12 pt-0 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURED_PRODUCTS.map((product) => (
               <Link key={product.code} href={`/shop/${product.code.toLowerCase()}`} className="shop-card group relative block border-b border-[#1f3b2c]/14 pb-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ad8e50] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f5f1e7]">
-                <div className="relative h-[360px] overflow-hidden rounded-[12px] bg-[#e8ead9] sm:h-[410px]">
+                <div className="relative h-[320px] overflow-hidden rounded-[12px] bg-[#e8ead9] sm:h-[350px]">
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#173527]/12 via-transparent to-transparent" />
-                  <div className="shop-bottle-image absolute inset-x-0 bottom-0 z-20 flex h-[350px] items-end justify-center sm:h-[400px]" style={{ transform: `scale(${product.scale})`, transformOrigin: "50% 100%" }}><img src={product.image} alt={`Chai ${product.name} Morning Green`} className="h-[340px] w-[250px] object-contain object-bottom drop-shadow-[0_22px_16px_rgba(5,36,25,0.16)] sm:h-[390px] sm:w-[280px]" /></div>
+                  <div className="shop-bottle-image absolute inset-x-0 bottom-0 z-20 flex h-[310px] items-end justify-center sm:h-[340px]" style={{ transform: `scale(${product.scale})`, transformOrigin: "50% 100%" }}><img src={product.image} alt={`Chai ${product.name} Morning Green`} className="h-[300px] w-[235px] object-contain object-bottom drop-shadow-[0_22px_16px_rgba(5,36,25,0.16)] sm:h-[330px] sm:w-[260px]" /></div>
                   <span className="shop-hover-cta pointer-events-none absolute bottom-4 left-4 z-40 inline-flex translate-y-2 items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c]">{copy.action.viewDetails} <ChevronRight size={13} /></span>
                 </div>
                 <div className="pt-4"><h3 className="font-serif text-[20px] font-medium leading-[1.15] tracking-[-0.018em] text-[#1f3b2c]">{product.name}</h3><p className="mt-1 text-[12px] font-medium text-[#526151]">{ENGLISH_PRODUCT_NAMES[product.code]}</p><p className="mt-2 text-[11px] font-medium leading-5 tracking-[0.015em] text-[#ad8e50]">{localizedDescriptor(product.ingredients, locale)}</p></div>
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex justify-center"><a href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></a></div>
+          <div className="mt-2 flex justify-center"><a href="/shop" className="inline-flex items-center gap-2 border-b border-[#ad8e50] pb-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1f3b2c] transition hover:text-[#ad8e50]">{copy.menu.viewAll} <ChevronRight size={14} /></a></div>
         </div>
       </section>
       <section id="discovery" className="scroll-mt-28 bg-[#1f3b2c] px-5 py-24 text-[#f5f1e7] sm:px-8 lg:px-12 lg:py-32">
