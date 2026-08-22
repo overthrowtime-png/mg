@@ -76,7 +76,7 @@ export default function Story() {
 
     <section className="story-hero relative flex min-h-[74svh] items-end overflow-hidden bg-[#173527] text-[#f5f1e7] lg:min-h-[82vh]">
       <div className="absolute inset-0 bg-[#173527]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-0 w-[78%] bg-cover bg-center opacity-60 lg:w-[68%] lg:opacity-70" style={{ backgroundImage: "url('/morning-green-story-hero-botanical.jpg')", backgroundPosition: "68% center" }} aria-hidden="true" />
+      <div className="absolute inset-y-0 right-0 w-[78%] bg-cover bg-center opacity-60 lg:w-[68%] lg:opacity-70" style={{ backgroundImage: "url('/story-hero-untitled-design.png')", backgroundPosition: "68% center" }} aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#173527] via-[#173527]/88 to-[#173527]/18 lg:via-[#173527]/68 lg:to-transparent" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" aria-hidden="true" />
       <div className="pointer-events-none absolute right-[8%] top-1/2 hidden -translate-y-1/2 items-center gap-4 lg:flex" aria-hidden="true">
