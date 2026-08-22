@@ -215,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="menu" className="relative scroll-mt-28 overflow-hidden bg-[#f5f1e7] px-5 pb-24 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pb-32 lg:pt-20">
+      <section id="menu" className="relative scroll-mt-28 overflow-hidden bg-[#f5f1e7] px-5 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16 lg:px-12 lg:pb-20 lg:pt-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 pb-10 lg:flex-row lg:items-end lg:pb-14">
             <div>
