@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  --font-serif: "Literata", "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-serif: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
   --color-background: oklch(0.96 0.015 96);
   --color-foreground: oklch(0.28 0.055 153);
   --color-card: oklch(0.98 0.01 96);
@@ -28,11 +28,11 @@ body { margin: 0; min-width: 320px; background: #f5f1e7; }
 button, a, input, textarea { font: inherit; }
 button { cursor: pointer; }
 .font-serif,
-.font-editorial { font-family: "Literata", "Noto Serif SC", "Songti SC", STSong, serif; }
+.font-editorial { font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif; }
 .font-ui { font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
 
 .hero-heading {
-  font-family: "Literata", "Noto Serif SC", "Songti SC", STSong, serif;
+  font-family: "Fraunces", "Noto Serif", "Noto Serif SC", "Songti SC", STSong, serif;
   font-weight: 400;
   font-synthesis: none;
   text-wrap: balance;
