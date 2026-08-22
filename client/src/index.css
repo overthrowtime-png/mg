@@ -398,7 +398,7 @@ button { cursor: pointer; }
   .story-scroll-arrow { animation: none; }
 }
 
-.story-hero-art { background-position: center; }
+.story-hero-art { background-position: calc(100% + 56px) center; background-size: auto 96%; background-repeat: no-repeat; background-color: #173527; }
 @media (min-width: 768px) and (max-width: 1024px) {
   .story-hero-art { background-position: left center; background-size: auto 112%; }
   .story-page { --story-h1-size: clamp(46px, 6vw, 54px); --story-lead-size: 18px; }
