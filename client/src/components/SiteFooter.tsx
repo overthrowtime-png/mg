@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { FACEBOOK_LINK, WHATSAPP_LINK } from "@shared/morningGreen";
+import { FACEBOOK_LINK, WHATSAPP_LINK, optimizedAsset } from "@shared/morningGreen";
 import { type Translations } from "../i18n";
 import { ContactCtas } from "./ContactCtas";
 import { PlatformIcon } from "./PlatformIcon";
@@ -16,7 +16,7 @@ export function SiteFooter({ copy, showHomeLink = false }: SiteFooterProps) {
         <div className="grid gap-10 border-b border-white/12 pb-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_minmax(250px,0.9fr)_minmax(170px,0.65fr)] lg:gap-x-12 lg:gap-y-0 lg:pb-12">
           <div className="max-w-xl md:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-4">
-              <img src="/morning-green-logo-160.png" alt="Morning Green" className="h-11 w-11 rounded-[3px] object-contain" />
+              <img src={optimizedAsset("/morning-green-logo-160.png")} alt="Morning Green" decoding="async" loading="lazy" className="h-11 w-11 rounded-[3px] object-contain" />
               <div>
                 <p className="font-serif text-[clamp(1.35rem,2vw,2rem)] tracking-[0.13em]">MORNING GREEN</p>
               </div>

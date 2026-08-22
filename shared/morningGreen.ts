@@ -1,4 +1,9 @@
-export const HERO_IMAGE = "/SACVOCTUYETMY.png";
+export function optimizedAsset(path: string) {
+  if (path.startsWith("/manus-storage/") || path.startsWith("/optimized/")) return path;
+  return path.replace(/^(\/)([^/]+)\.(png|jpe?g)$/i, "$1optimized/$2.webp");
+}
+
+export const HERO_IMAGE = optimizedAsset("/SACVOCTUYETMY.png");
 export const FACEBOOK_OFFICE_IMAGE = "/manus-storage/morning-green-facebook-office_add3feda.png";
 export const MESSENGER_LINK = "https://m.me/morninggreen";
 export const FACEBOOK_LINK = "https://www.facebook.com/morninggreenvn";
@@ -6,7 +11,6 @@ export const ZALO_LINK = "https://zalo.me/morninggreen";
 export const PHONE_NUMBER = "0839 761 494";
 export const PHONE_LINK = "tel:+84839761494";
 export const WHATSAPP_LINK = "https://wa.me/84839761494";
-
 export type Product = {
   name: string;
   descriptor: string;
