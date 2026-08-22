@@ -3,7 +3,6 @@ import {
   ArrowDown,
   ChevronRight,
   Leaf,
-  Sparkles,
   X,
   Zap,
 } from "lucide-react";
@@ -182,7 +181,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 h-48 w-full bg-gradient-to-t from-[#f5f1e7] to-transparent opacity-10" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-16 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16 lg:px-12 lg:pb-28 lg:pt-24">
           <div className="order-2 relative z-10 min-w-0 max-w-[30rem] lg:order-1 lg:max-w-[28rem] lg:pr-10">
-            <div className="mb-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.27em] text-[#c9af77]"><Sparkles size={14} />{copy.hero.eyebrow}</div>
+            <div className="mb-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.27em] text-[#c9af77]">{copy.hero.eyebrow}</div>
             <h1 className="hero-heading max-w-[30rem] text-[clamp(2.75rem,8vw,3.35rem)] font-medium leading-[1.02] tracking-[-0.012em] text-[#f6f0e2] sm:text-[clamp(3.1rem,3.8vw,3.95rem)] sm:leading-[1.02]">{renderHeroHeadline(locale, copy.hero.title, copy.hero.titleAccent)}</h1>
             <p className="mt-6 max-w-[28rem] text-[15px] leading-7 text-[#d9ddcf] sm:text-base">{copy.hero.body}</p>
             <div className="mt-7 flex flex-wrap gap-4">
