@@ -1,6 +1,7 @@
+// Keep the historical helper name for call-site compatibility, but serve the
+// original source asset so visual fidelity is never traded for transfer size.
 export function optimizedAsset(path: string) {
-  if (path.startsWith("/manus-storage/") || path.startsWith("/optimized/")) return path;
-  return path.replace(/^(\/)([^/]+)\.(png|jpe?g)$/i, "$1optimized/$2.webp");
+  return path;
 }
 
 export const HERO_IMAGE = optimizedAsset("/SACVOCTUYETMY.png");
