@@ -15,7 +15,7 @@ type ShopBottleCalibration = { visibleHeight: number; bottomPad: number };
 
 // The PNG canvases are identical, but each bottle occupies a different visible height inside it.
 // S01 (Gọn Bụng Nhẹ Tênh) is the reference; the image is enlarged and clipped in CSS only.
-const SHOP_BOTTLE_BASELINE_GAP = 18;
+const SHOP_BOTTLE_BASELINE_GAP = 30;
 
 const SHOP_BOTTLE_CALIBRATION: Record<string, ShopBottleCalibration> = {
   S01: { visibleHeight: 1277, bottomPad: 58 },
@@ -44,7 +44,7 @@ function getShopBottleStyle(code: string): React.CSSProperties {
   const imageHeightRatio = (1448 * 365) / (calibration.visibleHeight * 380);
   return {
     height: `${imageHeightRatio * 100}%`,
-    // Keep a visible 18px breathing space below the bottle after correcting source padding.
+    // Keep a visible 30px breathing space below the bottle after correcting source padding.
     marginBottom: `calc(${SHOP_BOTTLE_BASELINE_GAP}px - ${Math.round(calibration.bottomPad * 365 / calibration.visibleHeight)}px)`,
     width: "auto",
     maxWidth: "none",
